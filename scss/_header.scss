@@ -1,0 +1,94 @@
+//header
+header {
+    width: 100%;
+    height: auto;
+    background: $header_BG;
+    border-bottom: solid 1px $header_Border;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    .content {
+        width: 100%;
+        height: 45px;
+        padding: 0 14px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        //logo
+        .logo {
+            margin: 0 auto;
+        }
+
+        .title {
+            width: 70%;
+            height: auto;
+            text-align: center;
+            color: $header_Title;
+            font-size: 5.2vw;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: 0 auto;
+            @include hiddenText;
+        }
+
+        .back_arrow {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            display: block;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 14px;
+        }
+
+        .refresh_ic,
+        .link_ic,
+        .editBtn {
+            width: 21px;
+            height: 21px;
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &.editBtn {
+                display: none;
+
+                &.display {
+                    display: block;
+                }
+            }
+        }
+
+        .detailBtn {
+            width: auto;
+            height: 27px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 14px;
+            @include secondBtn;
+            font-size: 3vw;
+
+            &.edit {
+                display: none;
+
+                &.display {
+                    display: block;
+                }
+            }
+        }
+
+        &.helpPage {
+            display: none;
+
+            &.display {
+                display: flex;
+            }
+        }
+    }
+}

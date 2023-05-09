@@ -1,0 +1,633 @@
+//會員中心
+.memberWrap {
+    @include bgStyle_1;
+
+    //玩家資訊
+    .user {
+        width: 100%;
+        height: auto;
+        background: $mainBG_3;
+        box-sizing: border-box;
+        padding: 0 15px 20px;
+        margin-bottom: 16px;
+
+        //上列
+        .info {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            padding: 20px 0;
+
+            //左
+            div {
+
+                .account {
+                    color: $mainWord_1;
+                    font-size: 4vw;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 6px;
+
+                    .lv {
+                        width: auto;
+                        height: 18px;
+                        @include operateLV;
+                        font-size: 3.4vw;
+                        margin-right: 8px;
+                    }
+                }
+
+                .date {
+                    color: $mainWord_4;
+                    font-size: 2vw;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                }
+            }
+
+            //右
+            .infoBtn {
+                width: auto;
+                height: auto;
+                @include secondBtn;
+                font-size: 3.4vw;
+                padding: 3px 25px;
+            }
+        }
+
+        //入金顯示框
+        .wallet {
+            width: 100%;
+            height: 8.27vw;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 12px;
+
+            p {
+                width: 100%;
+                height: 100%;
+                @include member_WalletBox;
+            }
+
+            button {
+                width: 27.73vw;
+                height: 100%;
+                @include mainBtn;
+                border-radius: 0 5vw 5vw 0;
+                font-size: 3.4vw;
+                flex-shrink: 0;
+            }
+        }
+
+        //大按鈕區
+        .btnBox {
+            width: 92.27vw;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+
+            button {
+                width: 48%;
+                height: 18.4vw;
+                @include noBgBtn_Normal;
+                padding: 2vw;
+
+                &:active,&.active {
+
+                    i {
+                        background-position-y: 100%;
+                    }
+                }
+
+                i {
+                    display: block;
+                    width: 8vw;
+                    height: 8vw;
+                    flex-shrink: 0;
+                    margin-right: 4vw;
+
+                    &.wallet {
+                        margin-bottom: 0;
+                    }
+                    &.vip {
+                        background-position-x: 100%;
+                    }
+                }
+
+                .text {
+                    font-size: 4vw;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    text-align: left;
+
+                    p {
+                        font-size: 2vw;
+                    }
+                }
+            }
+        }
+
+        //其他選單
+        ul {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto 0;
+
+            li {
+                width: 25%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;;
+                position: relative;
+
+                i {
+                    display: block;
+                    width: 11vw;
+                    height: 10vw;
+
+                    &.bettingRecord {
+                        background-position-x: 0;
+                    }
+                    &.dealRecord {
+                        background-position-x: 25%;
+                    }
+                    &.mail {
+                        background-position-x: 50%;
+                    }
+                    &.card {
+                        background-position-x: 75%;
+                    }
+                }
+
+                p {
+                    color: $mainWord_1;
+                    font-size: 3.4vw;
+                    font-weight: bold;
+                    margin-top: 10px;
+                }
+
+                .bubble {
+                    min-width: 20px;
+                    min-height: 20px;
+                    @include mailBubble;
+                    top: -7px;
+                    right: 10px;
+                }
+            }
+        }
+    }
+
+    //選項條
+    .options {
+        width: 92vw;
+        height: 50px;
+        @include longBtn;
+        margin: 0 auto 17px;
+
+        &.opLang {
+                
+            span {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
+
+        i {
+            display: block;
+            width: 8vw;
+            height: 8vw;
+            margin-right: 3vw;
+
+            &.invite {
+                background-position-x: 0;
+            }
+            &.point {
+                background-position-x: 12.5%;
+            }
+            &.eventApply {
+                background-position-x: 25%;
+            }
+            &.helpNew {
+                background-position-x: 37.5%;
+            }
+            &.helpAbout {
+                background-position-x: 50%;
+            }
+            &.app {
+                background-position-x: 62.5%;
+            }
+            &.lang {
+                background-position-x: 75%;
+            }
+            &.logout {
+                background-position-x: 87.5%;
+            }
+        }
+
+        .arrow_ic {
+            display: block;
+            width: 2vw;
+            height: 4vw;
+            transform: scaleX(-1);
+            margin: 0;
+        }
+    }
+}
+
+//會員中心內頁滑軸
+.memberList {
+    width: 100%;
+    height: auto;
+    background: $choose_BG;
+
+    ul {
+        width: 100%;
+        height: auto;
+        display: flex;
+
+        li {
+            width: 50%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            font-size: 4vw;
+            font-weight: bold;
+            color: $choose_Word;
+
+            &:active,&.active {
+                color: $choose_ActiveWord;
+                background: $choose_ActiveBG;
+            }
+        }
+    }
+}
+
+//會員中心內頁基本情報
+.memberInfo {
+    @include bgStyle_1;
+    height: calc(100vh - 136px);
+    padding: 15px 0;
+
+    //上輸入列
+    form {
+        width: 100%;
+        height: auto;
+
+        ul {
+            width: 100%;
+            height: auto;
+            background: $mainBG_1;
+            padding-bottom: 12px;
+
+            li {
+                width: 100%;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                box-sizing: border-box;
+                padding: 0 17px;
+                margin-bottom: 20px;
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                em {
+                    position: relative;
+                    flex-shrink: 0;
+
+                    &::before {
+                        content: "※ ";
+                        color: $remind_Sp;
+                        font-size: 14px;
+                        font-style: italic;
+                        padding-right: 5px;
+                    }
+                }
+
+                span {
+                    width: 20vw;
+                    font-weight: bold;
+                    font-size: 3.4vw;
+                    color: $mainWord_2;
+                    flex-shrink: 0;
+                }
+
+                input {
+                    width: 100%;
+                    height: 36px;
+                    @include memberInput;
+                }
+
+                button {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: 10px;
+                    @include noBgBtn_Normal;
+                    display: none;
+                    flex-shrink: 0;
+                    position: relative;
+                    overflow: hidden;
+
+                    &.display {
+                        display: flex;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 18px;
+                        height: 18px;
+                        pointer-events: none;
+                    }
+
+                    &.nope {
+
+                        &::before {
+                            width: 12px;
+                            height: 12px;
+                        }
+                    }
+
+                    &:active,&.active {
+
+                        &::before {
+                            top: -30px;
+                            filter: drop-shadow(0 36px 0 #000000);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //招待碼區/帳號強度
+    .info_1,.info_2 {
+        width: 100%;
+        height: auto;
+
+        &.info_2 {
+            margin-top: 15px;
+
+            ul {
+
+                li {
+                    border: none;
+
+                    span {
+        
+                        &:nth-of-type(1) {
+                            width: 100%;
+                            justify-content: flex-start;
+                            flex-shrink: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        ul {
+            width: 100%;
+            height: auto;
+            background: $mainBG_1;
+            
+            li {
+                width: 100%;
+                height: 50px;
+                border-bottom: solid 1px $mainBorder_1;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                box-sizing: border-box;
+                padding: 0px 16px;
+
+                &.forQR {
+                    height: auto;
+                    padding: 10px 16px;
+                }
+
+                span {
+                    width: 100%;
+                    color: $mainWord_1;
+                    font-size: 3.4vw;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    line-height: 18px;
+
+                    &:nth-of-type(1) {
+                        width: 30%;
+                        flex-shrink: 0;
+                    }
+
+                    //靠右字
+                    &.right {
+                        justify-content: flex-end;
+                    }
+
+                    //未認證
+                    &.empty {
+                        width: auto;
+                        color: $remind_Sp;
+                        flex-shrink: 0;
+                    }
+
+                    input {
+                        width: 100%;
+                        @include memberInput;
+                        background: none;
+                        padding: 0;
+                    }
+
+                    //複製按鈕
+                    .copy {
+                        width: 30px;
+                        height: 30px;
+                        @include noBgBtn_Normal;
+                        margin-left: 15px;
+                        flex-shrink: 0;
+                        position: relative;
+                        overflow: hidden;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 18px;
+                            height: 18px;
+                        }
+
+                        &:active,&.active {
+
+                            &::before {
+                                top: -30px;
+                                filter: drop-shadow(0 36px 0 #000000);
+                            }
+                        }
+                    }
+
+                    //確認/未確認
+                    .check,.noCheck {
+                        display: inline-block;
+                        width: 17px;
+                        height: 17px;
+                        margin-right: 10px;
+                        flex-shrink: 0;
+                    }
+                }
+
+                //更變密碼按鈕
+                .changePwdBtn {
+                    width: 30px;
+                    height: 30px;
+                    @include noBgBtn_Normal;
+                    flex-shrink: 0;
+                    position: relative;
+                    overflow: hidden;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 18px;
+                        height: 18px;
+                        pointer-events: none;
+                    }
+
+                    &:active,&.active {
+
+                        &::before {
+                            top: -30px;
+                            filter: drop-shadow(0 36px 0 #000000);
+                        }
+                    }
+                }
+
+                //帳號等級強度
+                .security {
+                    width: 100%;
+                    height: 40px;
+                    @include wordBox;
+
+                    span {
+                        width: auto !important;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//會員中心平台帳戶資訊
+.memberPlatform {
+    width: 100%;
+    height: calc(100vh - 136px);
+    overflow-y: auto;
+    padding: 15px 16px;
+    box-sizing: border-box;
+    background: $mainBG_1;
+
+    .platformBox {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        border: solid 1px $mainBorder_1;
+        border-radius: 5px;
+        background: $mainBG_1;
+        margin-bottom: 10px;
+
+        .title {
+            width: 100%;
+            height: 45px;
+            border-bottom: solid 1px $mainBorder_1;
+            box-sizing: border-box;
+            padding: 0 16px;
+            color: $mainWord_1;
+            font-size: 4.5vw;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .content {
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+            padding: 0 17px;
+
+            li {
+                width: 100%;
+                height: 45px;
+                display: flex;
+                align-items: center;
+
+                p {
+                    width: 100%;
+                    color: $mainWord_2;
+                    font-size: 4vw;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+
+                    &:nth-of-type(1) {
+                        width: 32%;
+                        flex-shrink: 0;
+                    }
+
+                    &:nth-of-type(2) {
+                        justify-content: space-between;
+
+                        button {
+                            width: 30px;
+                            height: 30px;
+                            margin-left: 10px;
+                            @include noBgBtn_Normal;
+                            position: relative;
+                            overflow: hidden;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                width: 18px;
+                                height: 18px;
+                            }
+
+                            &:active,&.active {
+
+                                &::before {
+                                    top: -30px;
+                                    filter: drop-shadow(0 36px 0 #000000);
+                                }
+                            }
+    
+                            &.un {
+                                opacity: 0;
+                                pointer-events: none;
+                            }
+                        }
+                    }
+
+                    span {
+                        color: $mainWord_1;
+                    }
+                }
+            }
+        }
+    }
+}

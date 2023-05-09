@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../js/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="../js/slick-1.8.1/slick/slick-theme.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="../js/slick-1.8.1/slick/slick.min.js"></script>
+    <script src="../js/javascript.js"></script>
+    <link rel="shortcut icon" href="../images/NJLOGO_64x64.ico" type="image/x-icon">
+</head>
+<body>
+    <!--header-->
+    <header>
+        <!--content-->
+        <div class="content">
+            <!--logo-->
+            <img src="../images/icon/logo.png" class="logo">
+        </div>
+    </header>
+    <!--main-->
+    <main>
+        <!--跑馬燈-->
+        <div class="marqueeBox">
+            <p class="title">最新ニュース</p>
+            <div class="marquee">
+                <pre>プロモーション~スロットリベートボーナス</pre>
+            </div>
+        </div>
+        <!--圖片輪播-->
+        <div class="ad">
+            <section class="single-item">
+                <img src="../images/banner.png">
+                <img src="../images/banner_2.png">
+                <img src="../images/banner_3.png">
+            </section>
+        </div>
+        <!--登入區-->
+        <div class="memberArea">
+            <!--登入後樣式-->
+            <div class="alLogin display">
+                <ul>
+                    <li>
+                        <span class="name">user898</span>
+                        <div class="lv">ゴールド会員</div>
+                    </li>
+                    <li>
+                        <p class="money">¥0.00</p>
+                    </li>
+                </ul>
+            </div>
+            <!--轉存提+vip-->
+            <div class="operate">
+                <div class="btnBox">
+                    <button onclick="window.location.href='./deposit.html'">入</button>
+                    <button onclick="window.location.href='./transfer.html'">振</button>
+                    <button onclick="window.location.href='./withdrawal.html'">出</button>
+                </div>
+            </div>
+        </div>
+        <!--遊戲區-->
+        <div class="homeCenter">
+            <!--遊戲種類選單-->
+            <div class="gameList">
+                <ul>
+                    <li class="hotBtn active">
+                        <div>
+                            <i class="hot_ic"></i>
+                            <p>HOT</p>
+                        </div>
+                    </li>
+                    <li class="loveBtn display">
+                        <div>
+                            <i class="love_ic"></i>
+                            <p>お気に入り</p>
+                        </div>
+                    </li>
+                    <li class="sportBtn">
+                        <div>
+                            <i class="sport_ic"></i>
+                            <p>スポーツ</p>
+                        </div>
+                    </li>
+                    <li class="liveBtn">
+                        <div>
+                            <i class="live_ic"></i>
+                            <p>ライブ</p>
+                        </div>
+                    </li>
+                    <li class="slotBtn">
+                        <div>
+                            <i class="slot_ic"></i>
+                            <p>スロット</p>
+                        </div>
+                    </li>
+                    <li class="fishBtn">
+                        <div>
+                            <i class="fish_ic"></i>
+                            <p>釣りゲーム</p>
+                        </div>
+                    </li>
+                    <li class="boardBtn">
+                        <div>
+                            <i class="board_ic"></i>
+                            <p>テーブルゲーム</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--遊戲選擇-->
+            <ul class="gameBox hotBox display">
+                <li onclick="callSlot()">
+                    <img src="../images/partner/hot/hot_1.png">
+                    <p>Japanese Mahjong</p>
+                </li>
+                <li onclick="callSlot()">
+                    <img src="../images/partner/hot/hot_2.png">
+                    <p>Koi-Koi</p>
+                </li>
+                <li onclick="callSlot()">
+                    <img src="../images/partner/hot/hot_3.png">
+                    <p>Big Win Cat</p>
+                </li>
+                <li onclick="callSlot()">
+                    <img src="../images/partner/hot/hot_4.png">
+                    <p>Oiran Dream</p>
+                </li>
+            </ul>
+            <ul class="gameBox sportBox">
+                <li onclick="callSport()">
+                    <img src="../images//partner/sport/sportImg_1.png">
+                    <p>36588 SPORTS</p>
+                </li>
+            </ul>
+            <ul class="gameBox loveBox">
+                <li></li>
+            </ul>
+            <ul class="gameBox liveBox">
+                <li onclick="callLive()">
+                    <img src="../images/partner/live/liveImg_1.png">
+                    <p>AG CASINO</p>
+                </li>
+                <li onclick="callLive()">
+                    <img src="../images/partner/live/liveImg_2.png">
+                    <p>MG CASINO</p>
+                </li>
+                <li onclick="callLive()">
+                    <img src="../images/partner/live/liveImg_3.png">
+                    <p>PP CASINO</p>
+                </li>
+                <li onclick="callLive()">
+                    <img src="../images/partner/live/liveImg_4.png">
+                    <p>EVO CASINO</p>
+                </li>
+                <li onclick="callLive()">
+                    <img src="../images/partner/live/liveImg_5.png">
+                    <p>ALL BET CASINO</p>
+                </li>
+                <li onclick="callLive()">
+                    <img src="../images/partner/live/liveImg_6.png">
+                    <p>SA CASINO</p>
+                </li>
+                <li onclick="callLive()">
+                    <img src="../images/partner/live/liveImg_7.png">
+                    <p>OG PLUS CASINO</p>
+                </li>
+                <li onclick="callLive()">
+                    <img src="../images/partner/live/liveImg_8.png">
+                    <p>WM CASINO</p>
+                </li>
+                <li onclick="callLive()">
+                    <img src="../images/partner/live/liveImg_9.png">
+                    <p>DG CASINO</p>
+                </li>
+                <li onclick="callLive()">
+                    <img src="../images/partner/live/liveImg_10.png">
+                    <p>RG CASINO</p>
+                </li>
+            </ul>
+            <ul class="gameBox slotBox">
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_1.png">
+                    <p>GoldenHero</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_2.png">
+                    <p>PNG</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_3.png">
+                    <p>HABANERO</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_4.png">
+                    <p>AG GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_5.png">
+                    <p>RED TIGER GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_6.png">
+                    <p>NETENT GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_7.png">
+                    <p>RSG GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_8.png">
+                    <p>PP SLOTS</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_9.png">
+                    <p>JILI SLOTS</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_10.png">
+                    <p>YGG</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_11.png">
+                    <p>Microgaming</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_12.png">
+                    <p>BOOONGO GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_13.png">
+                    <p>IFUN GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_14.png">
+                    <p>EVO PLAY</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_15.png">
+                    <p>RELAX</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_16.png">
+                    <p>NO LIMIT CITY</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_17.png">
+                    <p>AUX</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_18.png">
+                    <p>TPG GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_19.png">
+                    <p>SIMPLEPLAY GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_20.png">
+                    <p>PLAYSON GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_21.png">
+                    <p>BLUEPRINT GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_22.png">
+                    <p>RED RAKE GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_23.png">
+                    <p>4ThePlayer GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_24.png">
+                    <p>ELK GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_25.png">
+                    <p>ELYSIUM GAMES</p>
+                </li>
+                <li onclick="window.location.href='./slotPage.html'">
+                    <img src="../images/partner/slot/slotImg_26.png">
+                    <p>QUICKSPIN GAMES</p>
+                </li>
+            </ul>
+            <ul class="gameBox fishBox">
+                <li onclick="window.location.href='./fishPage.html'">
+                    <img src="../images/partner/fish/fishImg_1.png">
+                    <p>RSG GAMES</p>
+                </li>
+                <li onclick="window.location.href='./fishPage.html'">
+                    <img src="../images/partner/fish/fishImg_2.png">
+                    <p>JILI SLOTS</p>
+                </li>
+                <li onclick="window.location.href='./fishPage.html'">
+                    <img src="../images/partner/fish/fishImg_3.png">
+                    <p>TPG GAMES</p>
+                </li>
+                <li onclick="window.location.href='./fishPage.html'">
+                    <img src="../images/partner/fish/fishImg_4.png">
+                    <p>SIMPLEPLAY GAMES</p>
+                </li>
+            </ul>
+            <ul class="gameBox boardBox">
+                <li onclick="window.location.href='./boardPage.html'">
+                    <img src="../images/partner/board/boardImg_1.png">
+                    <p>HABANERO</p>
+                </li>
+                <li onclick="window.location.href='./boardPage.html'">
+                    <img src="../images/partner/board/boardImg_2.png">
+                    <p>AG GAMES</p>
+                </li>
+                <li onclick="window.location.href='./boardPage.html'">
+                    <img src="../images/partner/board/boardImg_3.png">
+                    <p>JILI SLOTS</p>
+                </li>
+                <li onclick="window.location.href='./boardPage.html'">
+                    <img src="../images/partner/board/boardImg_4.png">
+                    <p>Microgaming</p>
+                </li>
+                <li onclick="window.location.href='./boardPage.html'">
+                    <img src="../images/partner/board/boardImg_5.png">
+                    <p>IFUN GAMES</p>
+                </li>
+                <li onclick="window.location.href='./boardPage.html'">
+                    <img src="../images/partner/board/boardImg_6.png">
+                    <p>RED RAKE GAMES</p>
+                </li>
+                <li onclick="window.location.href='./boardPage.html'">
+                    <img src="../images/partner/board/boardImg_7.png">
+                    <p>4ThePlayer GAMES</p>
+                </li>
+                <li onclick="window.location.href='./boardPage.html'">
+                    <img src="../images/partner/board/boardImg_8.png">
+                    <p>ELYSIUM GAMES</p>
+                </li>
+            </ul>
+        </div>
+        <!--partner-->
+        <div class="partnerImg">
+            <iframe src="https://licensing.gaming-curacao.com/validator/?lh=4409a740c9e834ebacf02796815cd15f&amp;template=seal" data-v-3babf2cc="" style="border: none;"></iframe>
+            <img src="../images/partnerImg.png" alt="">
+        </div>
+    </main>
+    <!--footer-->
+    <footer>
+        <ul>
+            <li class="active" onclick="window.location.href='./index_inner.html'">
+                <i class="menu_ic"></i>
+                <p>ホーム</p>
+            </li>
+            <li onclick="window.location.href='./event.html'">
+                <i class="event_ic"></i>
+                <p>プロモーション</p>
+            </li>
+            <li onclick="window.location.href='./wallet.html'">
+                <i class="wallet_ic"></i>
+                <p>ウォレット</p>
+            </li>
+            <li onclick="window.location.href='./help_often_contact.html'">
+                <i class="service_ic"></i>
+                <p>カスタマーサービス</p>
+            </li>
+            <li onclick="window.location.href='./member.html'">
+                <i class="center_ic"></i>
+                <p>マイページ</p>
+            </li>
+        </ul>
+    </footer>
+    <!--彈窗-->
+    <div class="filter">
+        <!--體育彈窗-->
+        <div class="jumpWindow gameWindow sport">
+            <div class="title">
+                <p>クイック振替</p>
+                <i class="close"></i>
+            </div>
+            <form>
+                <div class="row">
+                    <p class="smallTitle">プラットホーム</p>
+                    <p class="gameName">36588 SPORTS</p>
+                </div>
+                <div class="row">
+                    <p class="smallTitle">メインウォレット</p>
+                    <input type="text" value="¥0.00" disabled>
+                </div>
+                <div class="row">
+                    <i class="arrow_ic"></i>
+                </div>
+                <div class="row">
+                    <p class="smallTitle">36588 SPORTS</p>
+                    <input type="text" value="¥0.00" disabled>
+                </div>
+                <div class="row">
+                    <p class="smallTitle">振替金額</p>
+                    <input type="text" value="0">
+                </div>
+                <div class="row btnBox">
+                    <button type="button">¥100</button>
+                    <button type="button">¥500</button>
+                    <button type="button">¥1,000</button>
+                    <button type="button">¥3,000</button>
+                    <button type="button">¥5,000</button>
+                    <button type="button">¥10,000</button>
+                    <button type="button">全て</button>
+                </div>
+                <div class="row checkBtn">
+                    <button>確認</button>
+                </div>
+            </form>
+            <button class="enterBtn">ゲームに入る</button>
+        </div>
+        <!--真人彈窗-->
+        <div class="jumpWindow gameWindow live">
+            <div class="title">
+                <p>クイック振替</p>
+                <i class="close"></i>
+            </div>
+            <form>
+                <div class="row">
+                    <p class="smallTitle">プラットホーム</p>
+                    <p class="gameName">AG CASINO</p>
+                </div>
+                <div class="row">
+                    <p class="smallTitle">メインウォレット</p>
+                    <input type="text" value="¥0.00" disabled>
+                </div>
+                <div class="row">
+                    <i class="arrow_ic"></i>
+                </div>
+                <div class="row">
+                    <p class="smallTitle">AG CASINO</p>
+                    <input type="text" value="¥0.00" disabled>
+                </div>
+                <div class="row">
+                    <p class="smallTitle">振替金額</p>
+                    <input type="text" value="0">
+                </div>
+                <div class="row btnBox">
+                    <button type="button">¥100</button>
+                    <button type="button">¥500</button>
+                    <button type="button">¥1,000</button>
+                    <button type="button">¥3,000</button>
+                    <button type="button">¥5,000</button>
+                    <button type="button">¥10,000</button>
+                    <button type="button">全て</button>
+                </div>
+                <div class="row checkBtn">
+                    <button>確認</button>
+                </div>
+            </form>
+            <button class="enterBtn">ゲームに入る</button>
+        </div>
+        <!--老虎機彈窗-->
+        <div class="jumpWindow gameWindow slot">
+            <div class="title">
+                <p>クイック振替</p>
+                <i class="close"></i>
+            </div>
+            <form>
+                <div class="row">
+                    <p class="smallTitle">プラットホーム</p>
+                    <p class="gameName">RSG GAMES</p>
+                </div>
+                <div class="row">
+                    <p class="smallTitle">メインウォレット</p>
+                    <input type="text" value="¥0.00" disabled>
+                </div>
+                <div class="row">
+                    <i class="arrow_ic"></i>
+                </div>
+                <div class="row">
+                    <p class="smallTitle">RSG GAMES</p>
+                    <input type="text" value="¥0.00" disabled>
+                </div>
+                <div class="row">
+                    <p class="smallTitle">振替金額</p>
+                    <input type="text" value="0">
+                </div>
+                <div class="row btnBox">
+                    <button type="button">¥100</button>
+                    <button type="button">¥500</button>
+                    <button type="button">¥1,000</button>
+                    <button type="button">¥3,000</button>
+                    <button type="button">¥5,000</button>
+                    <button type="button">¥10,000</button>
+                    <button type="button">全て</button>
+                </div>
+                <div class="row checkBtn">
+                    <button>確認</button>
+                </div>
+            </form>
+            <button class="enterBtn">ゲームに入る</button>
+        </div>
+    </div>
+    <!--背景-->
+    <div class="bg"></div>
+</body>
+</html>

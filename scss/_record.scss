@@ -1,0 +1,548 @@
+//投注紀錄
+.bettingWrap {
+    width: 100%;
+    height: calc(100vh - 95px);
+    background: $mainBG_1;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    .searchContent {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 15px;
+        background: $mainBG_3;
+        margin-top: 10px;
+
+        &.deal {
+            margin: 0;
+        }
+
+        .top {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .helf {
+                width: 48%;
+
+                p {
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    color: $mainWord_2;
+                }
+    
+                button {
+                    width: 100%;
+                    height: 42px;
+                    @include fakeSelect;
+                }
+            }
+
+            .full {
+                width: 100%;
+
+                &:nth-of-type(1) {
+
+                    p {
+                        margin-top: 0;
+                    }
+                }
+
+                p {
+                    margin: 20px 0 10px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    color: $mainWord_2;
+                }
+
+                .inputBox {
+                    width: 100%;
+                    height: 42px;
+                    border: solid 1px $mainBorder_1;
+                    border-radius: 3px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    color: $mainWord_3;
+                    font-size: 16px;
+                    font-weight: bold;
+                    background: $mainBG_1;
+
+                    input {
+                        width: auto;
+                        height: 100%;
+                        border: none;
+                        background: none;
+                        color: $mainWord_3;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                }
+
+                .selectBox {
+                    width: 100%;
+                    height: auto;
+
+                    select {
+                        width: 100%;
+                        height: 42px;
+                        @include mainSelect;
+                    }
+                }
+            }
+        }
+
+        .date {
+            width: 100%;
+            height: auto;
+            display: flex;
+            margin: 20px 0;
+
+            button {
+                width: 25%;
+                height: 38px;
+                @include noBgBtn_Normal;
+                border-left-width: 0;
+
+                &:nth-of-type(1) {
+                    border-radius: 5px 0 0 5px;
+                    border-left-width: 1px;
+                }
+
+                &:nth-of-type(2),
+                &:nth-of-type(3) {
+                    border-radius: 0;
+                }
+            
+                &:last-child {
+                    border-radius: 0 5px 5px 0;
+                }
+            }
+        }
+
+        .check {
+            width: 100%;
+            height: 42px;
+            @include mainBtn;
+        }
+    }
+
+    .list {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 10px 14px;
+
+        .noData {
+            display: none;
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+            color: $mainWord_4;
+            font-weight: bold;
+            font-size: 14px;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0 40px;
+
+            &.display {
+                display: flex;
+            }
+
+            .img {
+                display: block;
+                width: 180px;
+                height: 180px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .recordBox {
+            display: none;
+            width: 100%;
+            height: auto;
+
+            &.display {
+                display: block;
+            }
+
+            .titleBox {
+                width: 100%;
+                height: auto;
+                box-sizing: border-box;
+                padding: 16px;
+                border: solid 1px $mainBorder_1;
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+                margin-bottom: 10px;
+
+                i {
+                    display: block;
+                    width: 17px;
+                    height: 17px;
+                    margin-right: 8px;
+                }
+
+                p {
+                    color: $mainWord_1;
+                    font-size: 4vw;
+                    font-weight: bold;
+                }
+            }
+
+            .box {
+                width: 100%;
+                height: auto;
+                background: $mainBG_2;
+                border-radius: 5px;
+                box-sizing: border-box;
+                overflow: hidden;
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                &>p {
+                    color: $mainWord_1;
+                    font-size: 4vw;
+                    font-weight: bold;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                    padding: 0 16px;
+
+                    &:nth-last-of-type(1) {
+                        margin-bottom: 16px;
+                    }
+
+                    &.title {
+                        font-size: 6vw;
+                        padding: 16px;
+                        margin: 0;
+                    }
+
+                    span {
+                        color: $money;
+
+                        &.win {
+                            color: $remind;
+                        }
+                        &.lose {
+                            color: $remind_Sp;
+                        }
+                    }
+                }
+
+                .innerBox {
+                    width: 100%;
+                    height: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    background: $mainBG_3;
+                    max-height: 300px;
+                    overflow-y: auto;
+
+                    &.display {
+                        height: auto;
+                        padding: 16px;
+                    }
+
+                    ul {
+                        width: 100%;
+                        height: auto;
+                        border: solid 1px $mainBorder_1;
+                        border-radius: 3px;
+                        background: $mainBG_1;
+                        margin-bottom: 10px;
+                        box-sizing: border-box;
+
+                        &:last-child {
+                            margin: 0;
+                        }
+
+                        li {
+                            width: 100%;
+                            height: auto;
+                            box-sizing: border-box;
+                            padding: 0 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 10px;
+
+                            &.title {
+                                padding: 10px;
+                                border-bottom: solid 1px $mainBorder_1;
+                            }
+
+                            p {
+                                color: $mainWord_1;
+                                font-size: 4vw;
+                                font-weight: bold;
+                            }
+
+                            span {
+                                color: $money;
+                                font-size: 3.7vw;
+                                font-weight: bold;
+                                
+                                &.time {
+                                    color: $mainWord_4;
+                                    font-size: 3vw;
+                                }
+                                &.num {
+                                    color: $remind;
+                                    font-size: 3vw;
+                                }
+                                &.win {
+                                    color: $remind;
+                                }
+                                &.lose {
+                                    color: $remind_Sp;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .open {
+                    width: 100%;
+                    height: 45px;
+                    background: $mainBG_2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $mainWord_1;
+                    font-size: 4vw;
+                    font-weight: bold;
+                    border-top: solid 1px $mainBorder_1;
+
+                    .arrow_ic {
+                        display: block;
+                        width: 12px;
+                        height: 12px;
+                        margin-left: 9px;
+                        transition: 0.3s all;
+                    }
+
+                    &.active {
+
+                        .arrow_ic {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        .dealBox {
+            display: none;
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            border: solid 1px $mainBorder_1;
+            background: $mainBG_2;
+            margin-bottom: 10px;
+
+            &.display {
+                display: block;
+            }
+
+            .title {
+                width: 100%;
+                height: auto;
+                border-bottom: solid 1px $mainBorder_1;
+                color: $mainWord_1;
+                font-size: 4vw;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                box-sizing: border-box;
+                padding: 12px 16px;
+                
+                .date {
+                    font-size: 3vw;
+                    color: $mainWord_4;
+                }
+            }
+
+            ul {
+                width: 100%;
+                height: auto;
+                box-sizing: border-box;
+                padding: 0 16px;
+
+                li {
+                    width: 100%;
+                    height: 38px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    color: $mainWord_1;
+                    font-size: 3.4vw;
+                    font-weight: bold;
+
+                    .num {
+                        color: $money;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//交易紀錄上選項
+.recordTop {
+    width: 100%;
+    height: auto;
+    background: $choose_BG;
+
+    ul {
+        width: 100%;
+        height: auto;
+        display: flex;
+
+        li {
+            width: 50%;
+            height: 45px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4vw;
+            font-weight: bold;
+            color: $choose_Word;
+
+            &.active {
+                color: $choose_ActiveWord;
+                background: $choose_ActiveBG;
+            }
+        }
+    }
+}
+
+.waterBox {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 16px;
+
+    .noData {
+        display: none;
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        color: $mainWord_4;
+        font-weight: bold;
+        font-size: 14px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0 40px;
+
+        &.display {
+            display: flex;
+        }
+
+        .img {
+            display: block;
+            width: 180px;
+            height: 180px;
+            margin-bottom: 20px;
+        }
+    }
+
+    ul {
+        width: 100%;
+        height: auto;
+
+        li {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            background: $mainBG_2;
+            border: solid 1px $mainBorder_1;
+            margin-bottom: 10px;
+
+            p {
+                width: 100%;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                box-sizing: border-box;
+                padding: 0 16px;
+                font-weight: bold;
+                font-size: 4vw;
+
+                &.title {
+                    color: $mainWord_1;
+                    border-bottom: solid 1px $mainBorder_1;
+                }
+
+                span {
+                    font-size: 4vw;
+                    font-weight: bold;
+
+                    &:nth-of-type(1) {
+                        color: $mainWord_2;
+                    }
+
+                    &:last-child {
+                        color: $mainWord_1;
+                    }
+
+                    &.sp {
+                        color: $remind;
+                    }
+                }
+            }
+
+            .remindBox {
+                width: auto;
+                height: 42px;
+                margin: 0 16px;
+                border-radius: 3px;
+                background: $mainBG_3;
+                box-sizing: border-box;
+                padding: 5px;
+                color: $mainWord_4;
+                font-size: 2vw;
+                font-weight: bold;
+            }
+
+            .btnBox {
+                width: 100%;
+                height: auto;
+                margin: 20px 0;
+                box-sizing: border-box;
+                padding: 0 14px;
+                display: flex;
+                justify-content: space-between;
+
+                button {
+                    width: 48%;
+                    height: 38px;
+
+                    &:nth-of-type(1) {
+                        @include secondBtn;
+                        font-size: 3.4vw;
+                    }
+
+                    &:last-child {
+                        @include mainBtn;
+                        font-size: 3.4vw;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,434 @@
+//VIP會員
+.vipWrap {
+    width: 100%;
+    height: calc(100vh - 96px);
+    overflow-y: auto;
+    background: $mainBG_1;
+
+    //上部
+    .topBox {
+        width: 100%;
+        height: auto;
+        padding-bottom: 5px;
+        background: $mainBG_3;
+
+        .board {
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+            padding: 0 16px 16px;
+
+            .content {
+                position: relative;
+                padding-top: 12px;
+                width: 100%;
+                height: auto;
+
+                .account {
+                    font-size: 4.3vw;
+                    margin-bottom: 18px;
+                    letter-spacing: 2px;
+                    font-weight: bold;
+                    color: $mainWord_1;
+                }
+
+                .textBox {
+                    display: flex;
+                    margin-bottom: 15px;
+
+                    &>p {
+                        width: 30vw;
+                        color: $mainWord_4;
+                        font-size: 13px;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                    }
+
+                    div {
+                        width: auto;
+                        height: auto;
+
+                        p {
+                            color: $mainWord_4;
+                            font-size: 15px;
+                            font-weight: bold;
+
+                            &:first-child {
+                                color: $mainWord_2;
+                                margin-bottom: 6px;
+                            }
+                        }
+                    }
+                }
+
+                .medal {
+                    width: 22.93vw;
+                    height: 30.13vw;
+                    position: absolute;
+                    top: 3vw;
+                    right: 1.5vw;
+                }
+            }
+
+            .exBar {
+                width: 100%;
+                height: auto;
+
+                .level {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 9px;
+
+                    p {
+                        letter-spacing: 1px;
+                        font-weight: bold;
+                        font-size: 14px;
+                        color: $mainWord_2;
+                    }
+                }
+
+                .bar {
+                    width: 100%;
+                    height: 8px;
+                    border-radius: 4px;
+                    background: $vip_LevelBar;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    .cur {
+                        position: absolute;
+                        width: auto;
+                        height: auto;
+                        border-radius: 4px;
+                        background: $vip_LevelCur;
+                        left: 0;
+                        padding: 2px 5px;
+                        border-radius: 30px;
+
+                        p {
+                            color: $vip_Word;
+                            font-size: 12px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //會員權利
+    .enjoyBox {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 16px;
+        margin: 10px 0;
+        background: $mainBG_3;
+
+        .title {
+            color: $mainWord_1;
+            font-size: 4.3vw;
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        ul {
+            width: 100%;
+            height: auto;
+
+            li {
+                width: 100%;
+                height: auto;
+                padding: 6px 12px;
+                margin-bottom: 10px;
+                background: $mainBG_2;
+                border-radius: 3px;
+                font-size: 13px;
+                font-weight: bold;
+                color: $mainWord_4;
+                box-sizing: border-box;
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                p {
+                    font-size: 22px;
+                    color: $money;
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+    
+    //查看VIP詳情
+    .checkBtn {
+        width: 92%;
+        height: 50px;
+        @include longBtn;
+        padding: 0 20px;
+        margin: 0 auto 10px;
+
+        .arrow_ic {
+            display: block;
+            width: 2vw;
+            height: 4vw;
+            transform: scaleX(-1);
+        }
+    }
+}
+
+//各層級詳情
+.vipDetail {
+    width: 100%;
+    height: calc(100vh - 96px);
+    overflow-y: auto;
+    padding: 16px;
+    box-sizing: border-box;
+    background: $mainBG_1;
+
+    .lvWrap {
+        width: 100%;
+        height: auto;
+        position: relative;
+
+        .title {
+            font-size: 17px;
+            font-weight: bold;
+            color: $mainWord_4;
+            margin: 0 0 20px;
+        }
+
+        .list {
+            width: 100%;
+            height: auto;
+            display: flex;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            position: relative;
+            border: solid 1px $mainBorder_1;
+            background: $mainBG_2;
+
+            // i {
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: center;
+            //     width: 10px;
+            //     height: 40px;
+            //     position: absolute;
+            //     top: 0;
+            //     background: $mainBG_1;
+            //     z-index: 1;
+
+            //     &.prev {
+            //         left: 19vw;
+
+            //         &::before {
+            //             content: "";
+            //             position: absolute;
+            //             width: 7px;
+            //             height: 14px;
+            //             z-index: 1;
+            //         }
+            //     }
+
+            //     &.next {
+            //         right: 1vw;
+
+            //         &::before {
+            //             content: "";
+            //             position: absolute;
+            //             width: 7px;
+            //             height: 14px;
+            //             z-index: 1;
+            //             transform: scaleX(-1);
+            //         }
+            //     }
+            // }
+
+            .left {
+                width: 38%;
+                height: auto;
+                flex-shrink: 0;
+
+                li {
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+
+                    &.smallTitle {
+                        border-bottom: solid 1px $mainBorder_1;
+
+                        p {
+                            color: $mainWord_1;
+                        }
+                    }
+
+                    p {
+                        width: 100%;
+                        box-sizing: border-box;
+                        border-right: solid 1px $mainBorder_1;
+                        font-weight: bold;
+                        text-align: center;
+                        font-size: 14px;
+                        color: $mainWord_1;
+                    }
+                }
+            }
+
+            .right{
+                width: 80%;
+                height: auto;
+                display: flex;
+                overflow-x: auto;
+                position: relative;
+
+                ul {
+                    width: auto;
+                    height: auto;
+                    flex-shrink: 0;
+
+                    &:last-child {
+
+                        li {
+
+                            p {
+                                border: none;
+                            }
+                        }
+                    }
+
+                    li {
+                        width: auto;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+    
+                        &.smallTitle {
+                            border-bottom: solid 1px $mainBorder_1;
+    
+                            p {
+                                color: $mainWord_1;
+                            }
+                        }
+    
+                        p {
+                            width: 100%;
+                            box-sizing: border-box;
+                            border-right: solid 1px $mainBorder_1;
+                            font-weight: bold;
+                            text-align: center;
+                            font-size: 14px;
+                            color: $mainWord_1;
+                            box-sizing: border-box;
+                            padding: 0 15px;
+                        }
+                    }
+                }
+            }
+
+            // .finger {
+            //     display: block;
+            //     width: 7vw;
+            //     height: 10vw;
+            //     position: absolute;
+            //     right: 4vw;
+            //     bottom: 2vw;
+            //     animation: disappear 4s ease 0s infinite;
+    
+            //     &::before {
+            //         content: "";
+            //         position: absolute;
+            //         top: -10px;
+            //         left: -20%;
+            //         width: 0;
+            //         height: 0;
+            //         border-style: solid;
+            //         border-color: transparent $remind;
+            //         border-width: 6px 8px 6px 0;
+            //         animation: moveL 2s ease 0s infinite;
+            //     }
+    
+            //     &::after {
+            //         content: "";
+            //         position: absolute;
+            //         top: -10px;
+            //         right: 12%;
+            //         width: 0;
+            //         height: 0;
+            //         border-style: solid;
+            //         border-color: transparent $remind;
+            //         border-width: 6px 0 6px 8px;
+            //         animation: moveR 2s ease 0s infinite;
+            //     }
+            // }
+    
+            // @keyframes disappear {
+            //     0% {
+            //         opacity: 0;
+            //     }
+    
+            //     25% {
+            //         opacity: 1;
+            //     }
+    
+            //     75% {
+            //         opacity: 1;
+            //     }
+    
+            //     100% {
+            //         opacity: 0;
+            //     }
+            // }
+            // @keyframes moveL {
+            //     0% {
+            //         transform: translateX(0);
+            //     }
+    
+            //     50% {
+            //         transform: translateX(-140%);
+            //     }
+    
+            //     100% {
+            //         transform: translateX(0);
+            //     }
+            // }
+            // @keyframes moveR {
+            //     0% {
+            //         transform: translateX(0);
+            //     }
+    
+            //     50% {
+            //         transform: translateX(140%);
+            //     }
+    
+            //     100% {
+            //         transform: translateX(0);
+            //     }
+            // }
+        }
+    }
+
+    .textBox {
+        width: 100%;
+        height: auto;
+
+        p {
+            color: $mainWord_3;
+            font-size: 3.4vw;
+            font-weight: bold;
+            line-height: 5vw;
+            margin-bottom: 10px;
+
+            &.title {
+                color: $mainWord_1;
+                font-size: 4vw;
+            }
+        }
+    }
+}

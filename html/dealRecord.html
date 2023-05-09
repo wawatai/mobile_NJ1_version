@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../js/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="../js/slick-1.8.1/slick/slick-theme.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="../js/slick-1.8.1/slick/slick.min.js"></script>
+    <script src="../js/javascript.js"></script>
+    <link rel="shortcut icon" href="../images/NJLOGO_64x64.ico" type="image/x-icon">
+</head>
+<body>
+    <!--header-->
+    <header>
+        <!--content-->
+        <div class="content">
+            <i class="back_arrow" onclick="window.location.href='./member.html'"></i>
+            <div class="title">取引履歷</div>
+        </div>
+    </header>
+    <!--main-->
+    <main>
+        <!--交易紀錄-->
+        <div class="bettingWrap">
+            <div class="recordTop">
+                <ul>
+                    <li class="active">取引履歷</li>
+                    <li onclick="window.location.href='./dealRecord_water.html'">ベット額履歴</li>
+                </ul>
+            </div>
+            <div class="searchContent deal">
+                <div class="top">
+                    <div class="full">
+                        <p>タイプ</p>
+                        <div class="selectBox">
+                            <select>
+                                <option value="">入金</option>
+                                <option value="">出金</option>
+                                <option value="">振替/ボーナスウォレット</option>
+                                <option value="">リベートボーナス</option>
+                                <option value="">ボーナスウォレット購入記録</option>
+                                <option value="">プロモーション</option>
+                                <option value="">その他</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="full">
+                        <p>日付</p>
+                        <div class="inputBox">
+                            <input type="date" value="2022-05-13">
+                            ~
+                            <input type="date" value="2022-05-13">
+                        </div>
+                    </div>
+                </div>
+                <div class="date">
+                    <button>昨日</button>
+                    <button class="active">今日</button>
+                    <button>今週</button>
+                    <button>今月</button>
+                </div>
+                <button class="check">検索</button>
+            </div>
+            <div class="list">
+                <p class="noData display">
+                    <span class="img"></span>
+                    データなし
+                </p>
+                <div class="dealBox">
+                    <p class="title">
+                        一般的な財布 - 振替
+                        <span class="date">2021-06-16 11:36:09</span>
+                    </p>
+                    <ul>
+                        <li>
+                            取引履歷
+                            <p>BNG -> メインウォレット</p>
+                        </li>
+                        <li>
+                            お金
+                            <p class="num">9999</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dealBox">
+                    <p class="title">
+                        一般的な財布 - 振替
+                        <span class="date">2021-06-16 11:36:09</span>
+                    </p>
+                    <ul>
+                        <li>
+                            取引履歷
+                            <p>BNG -> メインウォレット</p>
+                        </li>
+                        <li>
+                            お金
+                            <p class="num">9999</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dealBox">
+                    <p class="title">
+                        一般的な財布 - 振替
+                        <span class="date">2021-06-16 11:36:09</span>
+                    </p>
+                    <ul>
+                        <li>
+                            取引履歷
+                            <p>BNG -> メインウォレット</p>
+                        </li>
+                        <li>
+                            お金
+                            <p class="num">9999</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--footer-->
+    <footer>
+        <ul>
+            <li onclick="window.location.href='./index_inner.html'">
+                <i class="menu_ic"></i>
+                <p>ホーム</p>
+            </li>
+            <li onclick="window.location.href='./event.html'">
+                <i class="event_ic"></i>
+                <p>プロモーション</p>
+            </li>
+            <li onclick="window.location.href='./wallet.html'">
+                <i class="wallet_ic"></i>
+                <p>ウォレット</p>
+            </li>
+            <li onclick="window.location.href='./help_often_contact.html'">
+                <i class="service_ic"></i>
+                <p>カスタマーサービス</p>
+            </li>
+            <li onclick="window.location.href='./member.html'">
+                <i class="center_ic"></i>
+                <p>マイページ</p>
+            </li>
+        </ul>
+    </footer>
+    <!--彈窗-->
+    <div class="filter"></div>
+</body>
+</html>
