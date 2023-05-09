@@ -1,0 +1,88 @@
+.kycWrap {
+    width: 100%;
+    height: auto;
+    padding: 7vw 5vw;
+
+    h1 {
+        color: $subWord_4;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 5vw;
+    }
+
+    h2 {
+        color: $subWord_5;
+        font-size: 0.85rem;
+        font-weight: bold;
+        margin-bottom: 2vw;
+    }
+
+    p {
+        color: $mainWord_1;
+        font-size: 0.85rem;
+        font-weight: bold;
+        margin-bottom: 1vw;
+    }
+
+    .box {
+        width: 100%;
+        height: auto;
+        background: $mainBG_2;
+        border: dotted 3px $mainBorder_2;
+        border-radius: 3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 12vw 0 10vw;
+        margin: 3vw 0 6vw;
+
+        i {
+            width: 12vw;
+            height: 12vw;
+            margin-bottom: 4vw;
+        }
+
+        button {
+            width: auto;
+            height: 9vw;
+            @include mainBtn;
+            margin-bottom: 4vw;
+        }
+
+        p {
+            color: $subWord_1;
+            font-size: 0.75rem;
+        }
+    }
+
+    .btnBox {
+        width: 100%;
+        height: auto;
+
+        button {
+            width: 100%;
+            height: 11vw;
+            margin-bottom: 4vw;
+
+            &.check {
+                @include registerBtn;
+            }
+            &.cancel {
+                @include fourthBtn;
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    .mar_1 {
+        margin-bottom: 6vw;
+    }
+
+    .mar_2 {
+        margin-bottom: 12vw;
+    }
+}

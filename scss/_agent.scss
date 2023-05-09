@@ -1,0 +1,286 @@
+.agentPage {
+    width: 96%;
+    height: auto;
+    margin: 0 auto;
+
+    .textBox {
+
+        p {
+            color: $mainWord_1;
+            font-size: 1rem;
+            text-align: center;
+
+            &.title {
+                color: $subWord_4;
+                font-size: 1.4rem;
+                font-family: sans-serif;
+                font-weight: bold;
+                margin: 6vw 0 4vw;
+            }
+
+            &.subTitle {
+                line-height: 1.4rem;
+                margin: 0 0 4vw;
+            }
+        }
+    }
+
+    .introBox {
+        width: 100%;
+        height: auto;
+        background: $subBG_1;
+        border-radius: 2vw;
+        padding: 6vw 2vw;
+        margin: 0 0 4vw;
+    }
+
+    .info {
+
+        p {
+            color: $mainWord_1;
+            font-size: 0.85rem;
+            font-weight: bold;
+
+            &.title {
+                margin: 0 0 3vw;
+            }
+
+            &.content {
+                font-size: 0.7rem;
+                color: $mainWord_2;
+                line-height: 1.2rem;
+                margin: 0 0 4vw;
+            }
+        }
+    }
+
+    .whyUS {
+        width: 94%;
+        height: auto;
+        margin: 0 auto;
+
+        .intro_ic {
+            width: 17vw;
+            height: 17vw;
+            margin: 0 3vw 0 0;
+            flex-shrink: 0;
+
+            &.live {
+                width: 22vw;
+                height: 22vw;
+                margin: 0 6vw 10vw 0;
+                background-position-y: 0%;
+            }
+
+            &.casino {
+                background-position-y: 24%;
+            }
+
+            &.transfer {
+                background-position-y: 49%;
+            }
+
+            &.profesional {
+                background-position-y: 75%;
+            }
+
+            &.nivel {
+                background-position-y: 100%;
+            }
+        }
+
+        .top, 
+        .down {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .info {
+
+                p {
+                    text-align: unset;
+                }
+            }
+        }
+
+        .top {
+            border-bottom: 0.4vw solid $mainBorder_1;
+            margin-bottom: 4vw;
+        }
+
+        .down {
+            align-items: unset;
+
+            .resultBox {
+                width: 33%;
+                height: 100%;
+                padding: 2vw 4vw 0;
+
+                &:nth-of-type(2) {
+                    border-color: $mainBorder_1;
+                    border-style: solid;
+                    border-width: 0 0.4vw 0 0.4vw;
+                }
+
+                p {
+                    color: $mainWord_1;
+                    font-size: 0.7rem;
+                    text-align: center;
+
+                    &.num {
+                        color: $subWord_6;
+                        font-size: 1.6rem;
+                        font-weight: bold;
+                        font-family: sans-serif;
+                        margin: 0 0 2vw;
+                    }
+                }
+            }
+        }
+
+        .introBox {
+
+            &:not(:first-child) {
+                display: flex;
+                align-items: center;
+                justify-content: unset;
+                padding: 6vw;
+
+                .content {
+                    white-space: nowrap;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .comisiones {
+        width: 94%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2vw;
+        margin: 0 auto;
+
+        .title {
+            color: $mainWord_1;
+            font-size: 0.9rem;
+            font-weight: bold;
+            white-space: nowrap;
+            margin: 4vw 0 6vw;
+        }
+
+        img {
+            width: 96%;
+            height: auto;
+            object-fit: contain;
+            margin: 0 0 4vw;
+        }
+
+        .outer {
+            width: 96%;
+            height: auto;
+            border-radius: 2vw;
+            border: 1px solid $mainBorder_2;
+            margin-bottom: 4vw;
+            overflow: hidden;
+
+            table {
+                width: 100%;
+                height: auto;
+
+                tr {
+
+                    &:nth-of-type(even) {
+                        background: $agTable_BG2;
+                    }
+
+                    &:nth-of-type(odd){
+                        background: $agTable_BG3;
+                    }
+
+                    &:nth-of-type(1) {
+                        background: $agTable_BG;
+
+                        th {
+                            width: 50%;
+                            vertical-align: middle;
+                            padding: 2vw;
+                            position: relative;
+                                
+                            &::before {
+                                content: "";
+                                width: 0.2vw;
+                                height: 5vw;
+                                background: $mainBorder_2;
+                                position: absolute;
+                                top: 50%;
+                                right: 0;
+                                transform: translateY(-50%);
+                            }
+
+                            &:nth-of-type(2) {
+
+                                &::before {
+                                    display: none;
+                                }
+                            }
+
+                            p {
+                                color: $mainWord_1;
+                                font-size: 0.85rem; 
+                                font-weight: bold;
+                                text-align: center;
+                                line-height: 18px;
+                            }
+                        }
+                    }
+
+                    td {
+                        vertical-align: middle;
+                        padding: 20px;
+                        position: relative;
+                            
+                        &::before {
+                            content: "";
+                            width: 1px;
+                            height: 20px;
+                            background: $mainBorder_2;
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                            transform: translateY(-50%);
+                        }
+
+                        &:nth-of-type(2) {
+
+                            &::before {
+                                display: none;
+                            }
+                        }
+
+                        p {
+                            color: $mainWord_1;
+                            font-size: 16px; 
+                            font-weight: bold;
+                            text-align: center;
+                            line-height: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    button {
+        width: 94%;
+        height: 10vw;
+        @include header_inviteBtn;
+        font-size: 0.9rem;
+        margin: 0 auto ;
+    }
+}

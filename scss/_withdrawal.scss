@@ -1,182 +1,179 @@
 //提款
 .withWrap {
     width: 100%;
-    height: calc(100vh - 96px);
-    background: $mainBG_1;
-    box-sizing: border-box;
-    padding-bottom: 15px;
-    overflow-y: auto;
+    height: auto;
 
     //上半
     .walletBox {
         width: 100%;
         height: auto;
-        background: $mainBG_3;
-        box-sizing: border-box;
-        padding: 24px 16px;
 
-        //漸層
-        .gradient {
-            width: 100%;
+        .content {
+            width: 92%;
             height: auto;
+            background: $subBG_1;
+            border-radius: 5vw;
+            padding: 4vw 4vw 6vw;
+            margin: 4vw auto;
 
-            .content {
+            .title {
                 width: 100%;
                 height: auto;
-                margin-bottom: 25px;
-                background: $mainBG_1;
-                border-radius: 5px;
-                box-sizing: border-box;
-                padding: 12px;
-                border: solid 1px $mainBorder_1;
-
-                .title {
-                    color: $mainWord_1;
-                    font-size: 14px;
-                    font-weight: bold;
-                    display: flex;
-                    align-items: center;
-
-                    i {
-                        display: block;
-                        margin-left: 10px;
-                        width: 4.27vw;
-                        height: 4.27vw;
-                    }
-                }
-
-                .amount {
-                    font-size: 29px;
-                    color: $money;
-                    font-weight: bold;
-                    margin-top: 10px;
-                }
-            }
-
-            .detail {
-                width: 100%;
-                height: auto;
-                box-sizing: border-box;
-                padding: 10px;
-                border-bottom: solid 1px $mainBorder_1;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
 
                 p {
-                    color: $mainWord_2;
-                    font-size: 14px;
+                    color: $mainWord_1;
+                    font-size: 0.75rem;
                     font-weight: bold;
-                    display: flex;
-                    flex-direction: column;
+                }
 
-                    button {
-                        width: auto;
-                        height: 20px;
-                        @include mainBtn;
-                        margin-top: 8px;
-                        font-size: 12px;
-                    }
+                button {
+                    width: auto;
+                    height: 6vw;
+                    @include mainBtn;
+                    font-size: 0.75rem;
+                }
+            }
 
-                    &.num {
-                        color: $mainWord_1;
-                        font-size: 17px;
-                    }
+            .amount {
+                color: $mainWord_1;
+                font-size: 2rem;
+                font-weight: bold;
+                margin-top: 2vw;
+            }
+        }
+
+        .detail {
+            width: 100%;
+            height: auto;
+            background: $subBG_2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5vw 4vw;
+            margin-bottom: 1vw;
+
+            &:nth-of-type(3) {
+                margin: 0;
+            }
+
+            p {
+                color: $mainWord_1;
+                font-size: 0.85rem;
+                font-weight: bold;
+                display: flex;
+                flex-direction: column;
+
+                button {
+                    width: auto;
+                    height: 6vw;
+                    @include mainBtn;
+                    font-size: 0.75rem;
+                    margin-top: 2vw;
                 }
             }
         }
 
         .walletDetail {
-            width: 100%;
-            height: 42px;
+            width: 92%;
+            height: 11vw;
             overflow: hidden;
-            margin-top: 10px;
-            transition: 0.3s all;
+            margin: 4vw auto 0;
 
             &.active {
-                height: 904px;
+                height: auto;
+
+                .check {
+
+                    i {
+                        transform: scaleY(-1);
+                    }
+                }
             }
 
             .check {
                 width: 100%;
-                height: 42px;
+                height: 11vw;
                 @include mainBtn;
+
+                i {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 2vw 1vw 0 1vw;
+                    border-color: $mainWord_1 transparent;
+                    margin-left: 2vw;
+                }
             }
 
-            .detailBox {
-                padding-bottom: 15px;
-                margin-top: 10px;
+            ul {
+                width: 100%;
+                height: 30vh;
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 2vw;
+                overflow: hidden;
+                margin-top: 4vw;
     
-                ul {
-                    display: grid;
-                    grid-template-columns: repeat(3,1fr);
-                    grid-gap: 12px 8px;
-                    width: 100%;
-                    height: 852px;
+                &.active {
+                    height: auto;
+                }
+    
+                li {
+                    width: auto;
+                    height: 8.5vh;
+                    background: $mainBG_1;
+                    border: solid 1px $mainBorder_2;
+                    border-radius: 3vw;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
                     overflow: hidden;
-                    transition: 0.5s all;
+                    padding: 0 3vw;
     
-                    li {
-                        width: auto;
-                        height: 60px;
-                        box-sizing: border-box;
-                        padding: 10px;
-                        border-radius: 5px;
-                        background: $mainBG_2;
-                        overflow: hidden;
-                        transition: 0.3s all;
+                    p {
+                        color: $mainWord_1;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                        @include hiddenText;
     
-                        div {
-                            letter-spacing: 1px;
-                            color: $mainWord_1;
-                            font-size: 12px;
-                            font-weight: bold;
-                            width: 100%;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            // display: flex;
-                            // align-items: center;
-    
-                            // .smallInfo {
-                            //     display: block;
-                            //     width: 18px;
-                            //     height: 18px;
-                            //     margin-left: 5px;
-                            //     position: relative;
-                            //     opacity: 0;
-                            //     pointer-events: none;
-    
-                            //     &.display {
-                            //         opacity: 1;
-                            //         pointer-events: visible;
-                            //     }
-    
-                            //     &:hover,&:active,&.active {
-    
-                            //         .inner {
-                            //             display: block;
-                            //         }
-                            //     }
-    
-                            //     .inner {
-                            //         display: none;
-                            //         width: auto;
-                            //         height: auto;
-                            //         @include smallTip;
-                            //         position: absolute;
-                            //         left: 50%;
-                            //         transform: translateX(-50%);
-                            //         bottom: -30px;
-                            //     }
-                            // }
+                        &.smallTitle {
+                            color: $mainWord_2;
+                            font-size: 0.85rem;
                         }
+                    }
+                }
+            }
+
+            .openBtn {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 4vw;
     
-                        p {
-                            margin-top: 8px;
-                            font-size: 17px;
-                            color: $money;
-                            font-weight: bold;
+                p {
+                    display: none;
+                    color: $mainWord_1;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    align-items: center;
+                    justify-content: center;
+    
+                    &.display {
+                        display: flex;
+                    }
+    
+                    .db_arrow {
+                        width: 4vw;
+                        height: 4vw;
+                        margin-left: 2vw;
+    
+                        &.active {
+                            transform: rotate(180deg);
                         }
                     }
                 }
@@ -188,96 +185,64 @@
     .withContent {
         width: 100%;
         height: auto;
-        background: $mainBG_1;
-        padding: 16px;
-        box-sizing: border-box;
-        margin-top: 10px;
-        background: $mainBG_3;
-
-        .row {
-            width: 100%;
-            height: auto;
-            margin-bottom: 16px;
-
-            .title {
-                color: $mainWord_2;
-                font-size: 14px;
-                font-weight: bold;
-                margin-bottom: 8px;
-            }
-
-            input {
-                width: 100%;
-                height: 42px;
-                @include mainInput;
-            }
-
-            select {
-                width: 100%;
-                height: 42px;
-                @include mainSelect;
-            }
-
-            .remind {
-                color: $remind;
-                font-size: 12px;
-                font-weight: bold;
-                margin-top: 8px;
-            }
-        }
+        margin-top: 4vw;
 
         .remindBox {
             width: 100%;
             height: auto;
-            margin-bottom: 10px;
-            @include wordBox;
-            padding: 10px;
-            font-size: 13px;
-            line-height: 18px;
-        }
-
-        .check {
-            width: 100%;
-            height: 42px;
-            @include mainBtn;
-            margin-top: 10px;
-        }
-
-        .changeBox {
-            display: none;
-
-            &.display {
-                display: block;
-            }
-        }
-    }
-
-    //提醒
-    .bottomRemindBox {
-        width: 92.27vw;
-        height: auto;
-        margin: 16px auto 0;
-        background: $mainBG_3;
-        border-radius: 5px;
-        box-sizing: border-box;
-        padding: 16px;
-
-        p {
-            color: $mainWord_3;
-            font-size: 14px;
-            font-weight: bold;
-            line-height: 18px;
-            margin-bottom: 8px;
-
-            &.title {
+            background: $subBG_2;
+            padding: 5vw 6vw;
+            margin-bottom: 2vw;
+            
+            p {
                 color: $mainWord_1;
-                font-size: 16px;
-                letter-spacing: 1px;
-                margin-bottom: 10px;
+                font-size: 0.85rem;
+                font-weight: bold;
+                margin-bottom: 2vw;
+
+                &.remind {
+                    color: $subWord_2;
+                    font-size: 0.75rem;
+                    line-height: 1.2rem;
+                    margin: 4vw 0 0;
+                }
+            }
+        }
+
+        .inputBox {
+            width: 100%;
+            height: auto;
+            background: $subBG_2;
+            padding: 4vw;
+            margin-bottom: 4vw;
+
+            .title {
+                color: $mainWord_1;
+                font-size: 0.85rem;
+                font-weight: bold;
+                margin-bottom: 2vw;
             }
 
-            &.remind {
-                color: $remind;
+            input {
+                width: 100%;
+                height: 11vw;
+                @include mainInput;
+                border-radius: 2vw;
+            }
+
+            select {
+                width: 100%;
+                height: 11vw;
+                @include mainSelect;
+                border-radius: 2vw;
+                margin-bottom: 6vw;
+            }
+
+            .check {
+                width: 100%;
+                height: 42px;
+                @include mainBtn;
+                margin-top: 6vw;
             }
         }
     }

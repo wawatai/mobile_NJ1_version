@@ -2,35 +2,44 @@
 .eventApplyType {
     width: 100%;
     height: auto;
-    overflow-x: auto;
-    position: fixed;
-    top: 45px;
-    left: 0px;
-    z-index: 10;
-    background: $mainBG_1;
 
     ul {
+        width: 100%;
+        height: auto;
         display: flex;
         overflow-x: auto;
 
         li {
-            width: auto;
-            height: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 3.4vw;
+            width: 34%;
+            height: 11vw;
+            color: $mainWord_1;
+            font-size: 0.75rem;
             font-weight: bold;
-            color: $choose_Word;
-            background: $choose_BG;
-            box-sizing: border-box;
-            padding: 0 8px;
-            white-space: nowrap;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            opacity: 0.4;
+
+            &::before {
+                display: none;
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 0.5vw;
+                background: $mainBorder_1;
+                border-radius: 30vw;
+                left: 0;
+                bottom: 0;
+            }
 
             &:active,&.active {
-                background: $choose_ActiveBG;
-                color: $choose_ActiveWord;
+                opacity: 1;
+
+                &::before {
+                    display: block;
+                }
             }
         }
     }
@@ -40,10 +49,7 @@
 .applyList {
     display: none;
     width: 100%;
-    height: calc(100vh - 136px);
-    background: $mainBG_1;
-    overflow-y: scroll;
-    margin-top: 40px;
+    height: auto;
 
     &.display {
         display: block;
@@ -52,41 +58,26 @@
     .listBox {
         width: 100%;
         height: auto;
-        box-sizing: border-box;
-        padding: 16px 24px;
+        padding: 4vw;
 
         .list {
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: solid 1px $jumpWindow_Border;
-            background: $jumpWindow_BG;
-            text-align: center;
+            width: 100%;
+            height: auto;
+            background: $mainBG_1;
+            border-radius: 5vw;
+            border: solid 1px $mainBorder_1;
+            margin-bottom: 4vw;
 
             .title {
                 width: 100%;
-                height: 40px;
+                height: 11vw;
+                border-bottom: solid 1px $mainBorder_1;
+                color: $subWord_1;
+                font-size: 1.2rem;
+                font-weight: bold;
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                background: $jumpWindow_TitleBG;
-                color: $jumpWindow_Title;
-                font-size: 4.2vw;
-                font-weight: bold;
-            }
-
-            .tips {
-                display: none;
-                width: auto;
-                margin-top: 6px;
-                @include smallTip;
-
-                &.display {
-                    display: inline-block;
-                }
-
-                em {
-                    margin-right: 5px;
-                }
+                padding: 0 5vw;
             }
 
             ul {
@@ -96,36 +87,25 @@
                 li {
                     width: 100%;
                     height: auto;
-                    box-sizing: border-box;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 6px 12px;
-
-                    &.cur {
-                        background: $mainBG_2;
-                    }
+                    padding: 2vw 3vw;
                     
-                    label {
-                        flex-shrink: 0;
-                        width: 40%;
-                        color: $mainWord_2;
-                        font-size: 14px;
-                        font-weight: bold;
-                        text-align: left;
-                    }
-
                     p {
                         color: $mainWord_1;
-                        font-size: 14px;
-                        font-weight: bold;
+                        font-size: 0.85rem;
 
-                        em {
-                            color: $remind;
+                        &.smallTitle {
+                            font-weight: bold;
+                        }
 
-                            &.sp {
-                                color: $remind_Sp;
-                            }
+                        &.limit {
+                            color: $subWord_2;
+                        }
+
+                        span {
+                            color: $subWord_3;
                         }
                     }
                 }
@@ -134,226 +114,137 @@
             .btnBox {
                 width: 100%;
                 height: auto;
-                box-sizing: border-box;
-                padding: 15px 12px;
                 display: flex;
                 justify-content: space-between;
+                padding: 4vw 3vw;
+
+                &.single {
+
+                    button {
+                        width: 100%;
+                    }
+                }
 
                 button {
-                    width: calc((100% - 10px) / 2);
-                    height: 32px;
+                    width: 48%;
+                    height: 9vw;
 
                     &.applyBtn {
-                        @include mainBtn;
+                        @include mailBtn_1;
+                        font-size: 1rem;
                     }
 
                     &.checkBtn {
-                        @include secondBtn;
+                        @include mainBtn;
+                        font-size: 1rem;
                     }
                 }
             }
         }
     }
-}
 
-//優惠申請紀錄
-.applyRecord {
-    width: 100%;
-    height: calc(100vh - 136px);
-    background: $mainBG_1;
-    overflow-y: auto;
-    margin-top: 40px;
-    box-sizing: border-box;
-    display: none;
-
-    &.display {
-        display: block;
-    }
-
-    .searchContain {
+    .searchContent {
         width: 100%;
         height: auto;
-        background: $mainBG_3;
-        padding: 15px;
-        box-sizing: border-box;
-        
-        form {
+        padding: 4vw 3vw;
+
+        .row {
             width: 100%;
             height: auto;
 
-            ul {
+            &:first-child {
+                margin-bottom: 4vw;
+            }
+
+            p {
+                color: $mainWord_1;
+                font-size: 0.85rem;
+                font-weight: bold;
+                margin-bottom: 2vw;
+            }
+
+            select {
                 width: 100%;
-                height: auto;
-
-                li {
-                    width: 100%;
-                    height: auto;
-                    margin-bottom: 20px;
-
-                    p {
-                        font-size: 14px;
-                        font-weight: bold;
-                        color: $mainWord_2;
-                        margin-bottom: 10px;
-                    }
-
-                    select {
-                        width: 100%;
-                        height: 42px;
-                        @include mainSelect;
-                    }
-
-                    .inputBox {
-                        width: 100%;
-                        height: 42px;
-                        border-radius: 5px;
-                        background: $mainBG_1;
-                        border: solid 1px $mainBorder_1;
-                        box-sizing: border-box;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-around;
-                        font-size: 15px;
-                        font-weight: bold;
-                        color: $mainWord_3;
-
-                        input {
-                            width: auto;
-                            height: 100%;
-                            @include mainInput;
-                            border: none;
-                            background: none;
-                        }
-                    }
-
-                    .btnBox {
-                        width: 100%;
-                        height: auto;
-                        display: flex;
-
-                        button {
-                            width: 25%;
-                            height: 38px;
-                            @include noBgBtn_Normal;
-                            border-left-width: 0;
-
-                            &:nth-of-type(1) {
-                                border-radius: 5px 0 0 5px;
-                                border-left-width: 1px;
-                            }
-                            &:nth-of-type(2),
-                            &:nth-of-type(3) {
-                                border-radius: 0;
-                            }
-                            &:last-child {
-                                border-radius: 0 5px 5px 0;
-                            }
-                        }
-                    }
-
-                    &.bigBtn {
-                        margin: 0;
-
-                        button {
-                            width: 100%;
-                            height: 42px;
-                            @include mainBtn;
-                        }
-                    }
-                }
+                height: 11vw;
+                @include mainSelect;
+                border-radius: 2vw;
             }
+        }
+
+        .date {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            margin: 4vw 0;
+
+            button {
+                width: 22%;
+                height: 10vw;
+                @include fourthBtn;
+            }
+        }
+
+        .check {
+            width: 100%;
+            height: 11vw;
+            @include mainBtn;
         }
     }
 
-    .reviewBody {
+    .data {
+        display: none;
         width: 100%;
         height: auto;
-        box-sizing: border-box;
-        padding: 10px 14px;
+        padding: 0vw 3vw 4vw;
 
-        .noData {
-            display: none;
-            width: 100%;
-            height: auto;
-            box-sizing: border-box;
-            color: $mainWord_4;
-            font-weight: bold;
-            font-size: 14px;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0 40px;
-    
-            &.display {
-                display: flex;
-            }
-    
-            .img {
-                display: block;
-                width: 180px;
-                height: 180px;
-                margin-bottom: 20px;
-            }
+        &.active {
+            display: block;
         }
 
-        .recordBox {
-            display: none;
+        table {
             width: 100%;
-            height: auto;
             background: $mainBG_1;
-            border-radius: 5px;
-            border: solid 1px $mainBorder_1;
-            margin-bottom: 10px;
+            border-radius: 2vw;
+            box-shadow: inset 0 0 3px $mainBorder_1;
 
-            &.display {
-                display: block;
+            &:not(:first-child) {
+                margin-top: 4vw;
             }
 
-            ul {
+            tr {
                 width: 100%;
                 height: auto;
 
-                .title {
-                    width: 100%;
+                &:first-child {
+                   
+                    td {
+                        margin-top: 2vw;
+                    }
+                }
+                
+                td {
+                    width: 50%;
                     height: auto;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    box-sizing: border-box;
-                    padding: 12px 16px;
-                    border-bottom: solid 1px $mainBorder_1;
+                    vertical-align: middle;
+                    padding: 5vw 4vw;
+
+                    &:first-child {
+                        font-weight: bold;
+                    }
+
+                    &:last-child {
+
+                        p {
+                            text-align: center;
+                        }
+                    }
 
                     p {
                         color: $mainWord_1;
-                        font-size: 4vw;
-                        font-weight: bold;
-
-                        span {
-                            font-size: 3.4vw;
-                            color: $mainWord_4;
-                        }
-                    }
-                }
-
-                ul {
-                    box-sizing: border-box;
-                    padding: 0 16px;
-
-                    li {
-                        width: 100%;
-                        height: 38px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-
-                        p {
-                            color: $mainWord_2;
-                            font-size: 3.4vw;
-                            font-weight: bold;
-
-                            &:last-child {
-                                color: $mainWord_1;
-                            }
-                        }
+                        font-size: 0.8rem;
+                        white-space: nowrap;
+                        line-height: 1rem;
                     }
                 }
             }

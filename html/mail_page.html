@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../js/slick-1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="../js/slick-1.8.1/slick/slick-theme.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-    <script src="../js/slick-1.8.1/slick/slick.min.js"></script>
     <script src="../js/javascript.js"></script>
-    <link rel="shortcut icon" href="../images/NJLOGO_64x64.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/MEXLOGO_64x64.ico" type="image/x-icon">
 </head>
 <body>
     <!--header-->
     <header>
         <!--content-->
         <div class="content">
+            <p class="title">標題文字</p>
             <i class="back_arrow" onclick="window.location.href='./mail.html'"></i>
         </div>
     </header>
@@ -25,8 +22,18 @@
     <main>
         <!--內文-->
         <div class="mailContent">
-            <p class="date">2021-12-14 21:08:45</p>
-            <p class="msg">&emsp;&emsp;人気ゲーム-日本麻雀人気ゲーム-日本麻雀人気ゲーム-日本麻雀人気ゲーム-日本麻雀人気ゲーム-日本麻雀人気ゲーム-日本麻雀人気ゲーム-日本麻雀</p>
+            <div class="textBox">
+                <div class="titleBox">
+                    <div>
+                        <p class="title">標題文字</p>
+                        <p class="date">2023-01-09 18:12:28</p>
+                    </div>
+                    <button>Borrar</button>
+                </div>
+                <div class="cntBox">
+                    <p>內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字</p>
+                </div>
+            </div>
         </div>
     </main>
     <!--footer-->
@@ -34,28 +41,29 @@
         <ul>
             <li onclick="window.location.href='./index_inner.html'">
                 <i class="menu_ic"></i>
-                <p>ホーム</p>
+                <span></span>
             </li>
             <li onclick="window.location.href='./event.html'">
                 <i class="event_ic"></i>
-                <p>プロモーション</p>
+                <span></span>
             </li>
             <li onclick="window.location.href='./wallet.html'">
                 <i class="wallet_ic"></i>
-                <p>ウォレット</p>
+                <span></span>
             </li>
             <li onclick="window.location.href='./help_often_contact.html'">
                 <i class="service_ic"></i>
-                <p>カスタマーサービス</p>
+                <span></span>
             </li>
-            <li onclick="window.location.href='./member.html'">
-                <i class="center_ic"></i>
-                <p>マイページ</p>
+            <li class="active" onclick="window.location.href='./member.html'">
+                <i class="member_ic"></i>
+                <span></span>
             </li>
         </ul>
     </footer>
     <!--彈窗-->
     <div class="filter"></div>
+    <!--背景-->
     <div class="bg"></div>
 </body>
 </html>

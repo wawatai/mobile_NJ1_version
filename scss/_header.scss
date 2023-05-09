@@ -3,7 +3,7 @@ header {
     width: 100%;
     height: auto;
     background: $header_BG;
-    border-bottom: solid 1px $header_Border;
+    box-shadow: 0 5px 10px 0 $header_Shadow;
     position: fixed;
     top: 0;
     left: 0;
@@ -11,47 +11,61 @@ header {
 
     .content {
         width: 100%;
-        height: 45px;
-        padding: 0 14px;
-        box-sizing: border-box;
+        height: 6vh;
         display: flex;
         align-items: center;
         position: relative;
+        padding: 0 4vw;
 
-        //logo
-        .logo {
-            margin: 0 auto;
+        &.index {
+            justify-content: space-between;
+        }
+
+        .inviteBtn {
+            width: auto;
+            height: 4vh;
+            @include header_inviteBtn;
+
+            &.apply {
+                padding: 0 6vw;
+            }
+
+            i {
+                width: 6.5vw;
+                height: 6.5vw;
+                margin-right: 2vw;
+            }
+
+            p {
+                text-align: left;
+            }
         }
 
         .title {
             width: 70%;
             height: auto;
-            text-align: center;
-            color: $header_Title;
-            font-size: 5.2vw;
+            color: $mainWord_1;
+            font-size: 1.25rem;
             font-weight: bold;
-            letter-spacing: 2px;
-            margin: 0 auto;
+            text-align: center;
             @include hiddenText;
+            margin: 0 auto;
         }
 
         .back_arrow {
+            width: 6vw;
+            height: 6vw;
             position: absolute;
-            width: 10px;
-            height: 20px;
-            display: block;
             top: 50%;
             transform: translateY(-50%);
-            left: 14px;
+            left: 4vw;
         }
 
-        .refresh_ic,
-        .link_ic,
         .editBtn {
-            width: 21px;
-            height: 21px;
+            width: 6vw;
+            height: 6vw;
             position: absolute;
-            right: 14px;
+            right: 4vw;
             top: 50%;
             transform: translateY(-50%);
 
@@ -66,20 +80,16 @@ header {
 
         .detailBtn {
             width: auto;
-            height: 27px;
+            height: 4vh;
+            @include registerBtn;
             position: absolute;
+            right: 4vw;
             top: 50%;
             transform: translateY(-50%);
-            right: 14px;
-            @include secondBtn;
-            font-size: 3vw;
+            display: none;
 
-            &.edit {
-                display: none;
-
-                &.display {
-                    display: block;
-                }
+            &.display {
+                display: block;
             }
         }
 
