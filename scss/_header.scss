@@ -3,7 +3,7 @@ header {
     width: 100%;
     height: auto;
     background: $header_BG;
-    border-bottom: solid 1px $header_Border;
+    box-shadow: 0 5px 10px 0 $header_Shadow;
     position: fixed;
     top: 0;
     left: 0;
@@ -11,83 +11,33 @@ header {
 
     .content {
         width: 100%;
-        height: 45px;
-        padding: 0 14px;
-        box-sizing: border-box;
+        height: 6vh;
         display: flex;
         align-items: center;
         position: relative;
+        padding: 0 4vw;
 
-        //logo
-        .logo {
-            margin: 0 auto;
+        &.index {
+            justify-content: space-between;
         }
 
-        .title {
-            width: 70%;
-            height: auto;
-            text-align: center;
-            color: $header_Title;
-            font-size: 5.2vw;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin: 0 auto;
-            @include hiddenText;
-        }
-
-        .back_arrow {
-            position: absolute;
-            width: 10px;
-            height: 20px;
-            display: block;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 14px;
-        }
-
-        .refresh_ic,
-        .link_ic,
-        .editBtn {
-            width: 21px;
-            height: 21px;
-            position: absolute;
-            right: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-
-            &.editBtn {
-                display: none;
-
-                &.display {
-                    display: block;
-                }
-            }
-        }
-
-        .detailBtn {
+        .inviteBtn {
             width: auto;
-            height: 27px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 14px;
-            @include secondBtn;
-            font-size: 3vw;
+            height: 4vh;
+            @include header_inviteBtn;
 
-            &.edit {
-                display: none;
-
-                &.display {
-                    display: block;
-                }
+            &.apply {
+                padding: 0 6vw;
             }
-        }
 
-        &.helpPage {
-            display: none;
+            i {
+                width: 6.5vw;
+                height: 6.5vw;
+                margin-right: 2vw;
+            }
 
-            &.display {
-                display: flex;
+            p {
+                text-align: left;
             }
         }
     }
