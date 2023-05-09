@@ -1,27 +1,27 @@
 //彈窗
 .filter {
+    display: none;
     width: 100%;
     height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
     background: $filter;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 999;
-    display: none;
 
     &.display {
         display: flex;
     }
 
     .jumpWindow {
-        background: $jumpWindow_BG;
-        border-radius: 16px;
-        overflow: hidden;
         display: none;
-        box-sizing: border-box;
-        border: solid 1px $jumpWindow_Border;
+        width: 92.27vw;
+        height: auto;
+        background: $jumpWindow_BG;
+        border-radius: 4vw;
+        position: relative;
 
         &.display {
             display: block;
@@ -29,341 +29,247 @@
 
         .title {
             width: 100%;
-            height: 50px;
+            height: 16vw;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: $jumpWindow_TitleBG;
-            color: $jumpWindow_Title;
-            font-size: 4vw;
-            font-weight: bold;
-            letter-spacing: 2px;
-            position: relative;
-    
-            i {
-                width: 4.73vw;
-                height: 4.73vw;
-                position: absolute;
-                right: 3.5vw;
+
+            p {
+                color: $mainWord_1;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+
+        i {
+
+            &.close {
+                width: 11vw;
+                height: 11vw;
+                @include closeBtn;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -14vw;
             }
         }
 
         //請先XX轉跳視窗
-        &.plsGo,&.plsGo2 {
-            width: 92.27vw;
-            height: auto;
+        &.plsGo,
+        &.plsGo2 {
 
             .content {
                 width: auto;
                 height: auto;
-                box-sizing: border-box;
-                padding: 24px;
+                padding: 5vw;
 
                 p {
                     color: $mainWord_1;
-                    font-size: 4vw;
+                    font-size: 1rem;
                     font-weight: bold;
-                    letter-spacing: 1px;
-                    line-height: 5vw;
+                    line-height: 1.2rem;
                     text-align: center;
-                    padding: 20px 0;
+                    padding: 4vw 0;
                 }
 
                 button {
                     width: 100%;
-                    height: 42px;
+                    height: 11vw;
                     @include mainBtn;
-                    margin-top: 24px;
+                    margin-top: 7vw;
                 }
             }
         }
 
         //登入帳密視窗
         &.loginWindow {
-            width: 92.27vw;
-            height: auto;
-
-            .title {
-
-                .icon {
-                    width: 8.6vw;
-                    height: 8.6vw;
-                    margin-right: 4vw;
-                }
-            }
 
             form {
                 width: 100%;
                 height: auto;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                box-sizing: border-box;
-                padding: 40px 24px;
+                padding: 5vw;
 
                 label {
+                    display: block;
                     width: 100%;
                     height: auto;
-                    position: relative;
-                    margin-bottom: 16px;
+                    margin-bottom: 3vw;
+
+                    p {
+                        color: $mainWord_1;
+                        font-size: 0.85rem;
+                        font-weight: bold;
+                        margin-bottom: 2vw;
+                    }
 
                     input {
                         width: 100%;
-                        height: 9.87vw;
+                        height: 11vw;
                         @include mainInput;
-                    }
-
-                    .eye {
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        right: 10px;
-                        display: block;
-                        width: 6.13vw;
-                        height: 4.26vw;
                     }
                 }
 
                 .forget {
                     width: 100%;
                     height: auto;
+                    text-align: right;
 
                     p {
-                        font-size: 2vw;
+                        color: $subWord_1;
+                        font-size: 0.75rem;
                         font-weight: bold;
-                        color: $click;
                     }
                 }
 
                 .realLogin {
                     width: 100%;
-                    height: 42px;
-                    margin: 6vw 0;
+                    height: 11vw;
                     @include mainBtn;
+                    margin: 7vw 0;
                 }
 
-                .registerBox {
-                    width: 100%;
-                    height: auto;
-    
-                    p {
-                        color: $mainWord_1;
-                        font-size: 3.7vw;
-                        font-weight: bold;
-                        text-align: center;
-
-                        &.signupBtn {
-                            color: $click;
-                            margin-top: 4vw;
-                        }
-                    }
+                .registerBtn {
+                    width: 40%;
+                    height: 11vw;
+                    @include registerBtn;
+                    display: block;
+                    margin: 0 auto;
                 }
             }
         }
 
         //忘記密碼
         &.forgetWindow {
-            width: 92.27vw;
-            height: auto;
 
             form {
                 width: 100%;
                 height: auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                box-sizing: border-box;
-                padding: 24px;
+                padding: 5vw;
 
-                input {
+                label {
+                    display: block;
                     width: 100%;
-                    height: 9.87vw;
-                    @include mainInput;
-                    margin-bottom: 4vw;
-                }
+                    height: auto;
+                    position: relative;
 
-                button {
-                    width: 100%;
-                    height: 42px;
-                    @include mainBtn;
-                    margin-bottom: 5vw;
+                    input {
+                        width: 100%;
+                        height: 13vw;
+                        @include mainInput;
+                    }
+
+                    button {
+                        width: auto;
+                        height: 13vw;
+                        @include secondBtn;
+                        font-size: 0.75rem;
+                        text-align: left;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%) scale(0.8);
+                        transform-origin: right;
+                        right: 2vw;
+                    }
                 }
 
                 p {
                     width: 100%;
                     height: auto;
                     color: $mainWord_1;
-                    font-size: 3.4vw;
+                    font-size: 0.85rem;
                     font-weight: bold;
-                    line-height: 5vw;
+                    text-align: center;
+                    line-height: 1.2rem;
+                    margin: 12vw 0 7vw;
                 }
             }
         }
 
         //註冊
         &.registerWindow {
-            width: 92.27vw;
-            height: auto;
-
-            .title {
-
-                .icon {
-                    width: 8.6vw;
-                    height: 8.6vw;
-                    margin-right: 4vw;
-                }
-            }
 
             form {
                 width: 100%;
                 height: auto;
                 max-height: 66vh;
                 overflow-y: auto;
-                box-sizing: border-box;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 24px 16px;
+                padding: 5vw;
 
                 label {
+                    display: block;
                     width: 100%;
                     height: auto;
                     position: relative;
-                    margin-bottom: 3vw;
-                    display: flex;
-                    flex-direction: column;
-                    box-sizing: border-box;
-                    padding: 0 13px 0 20px;
-
-                    &:nth-last-of-type(1),
-                    &:nth-last-of-type(2) {
-                        margin-bottom: 4vw;
-                    }
-
-                    .smallTitle {
-                        color: $mainWord_2;
-                        font-size: 4vw;
-                        font-weight: bold;
-                        margin-bottom: 1.5vw;
-                    }
-
-                    div {
-                        width: 100%;
-                        height: auto;
-                        display: flex;
-                        align-items: center;
-
-                        &.checkWord {
-                            display: block;
-                        }
-
-                        em {
-                            position: absolute;
-                            left: 0;
-                            color: $remind_Sp;
-                            font-size: 14px;
-                            font-weight: bold;
-                        }
-    
-                        input {
-                            width: 100%;
-                            height: 9.87vw;
-                            @include mainInput;
-    
-                            &.line {
-                                padding-left: 12vw;
-                            }
-                        }
-
-                        .eye {
-                            position: absolute;
-                            right: 20px;
-                            width: 6.13vw;
-                            height: 4.26vw;
-                        }
-    
-                        .date_ic {
-                            position: absolute;
-                            right: 25px;
-                            width: 4vw;
-                            height: 4vw;
-                        }
-    
-                        .line_ic {
-                            position: absolute;
-                            width: 8vw;
-                            height: 8vw;
-                            left: 23px;
-                        }
-                    }
-
-                    .remind {
-                        // position: absolute;
-                        // left: 4px;
-                        // top: 10.5vw;
-                        width: 100%;
-                        color: $remind_Sp;
-                        font-size: 3.4vw;
-                        font-weight: bold;
-                        line-height: 4vw;
-                        transform-origin: left;
-                        margin-top: 1.5vw;
-                    }
+                    margin-bottom: 2vw;
 
                     &.isCheck {
                         display: flex;
                         align-items: center;
-                        flex-direction: row;
+                        margin-top: 11vw;
 
-                        input[type = checkbox]{
-                            width: 4.5vw;
-                            height: 4.5vw;
-                            margin-right: 10px;
+                        input {
+                            width: 4vw;
+                            height: 4vw;
+                            @include checkBox;
+                            margin-right: 2vw;
                         }
 
                         p {
-                            color: $mainWord_1;
-                            font-size: 3.4vw;
+                            color: $mainWord_2;
+                            font-size: 0.75rem;
                             font-weight: bold;
-                            
-                            &.ruleBtn {
-                                color: $click;
-                                margin-top: 2vw;
+
+                            span {
+                                display: block;
+                                color: $subWord_1;
+                                margin-top: 1vw;
                             }
                         }
                     }
 
-                    .code {
+                    input[type="text"] {
+                        width: 100%;
+                        height: 13vw;
+                        @include mainInput;
+                    }
+
+                    button {
                         width: auto;
-                        height: 8vw;
-                        position: absolute;
-                        right: 17px;
+                        height: 13vw;
                         @include secondBtn;
-                        font-size: 2vw;
-                        padding: 0 7px;
+                        font-size: 0.75rem;
+                        text-align: left;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%) scale(0.8);
+                        transform-origin: right;
+                        right: 2vw;
+                    }
+
+                    .remind {
+                        color: $mainWord_2;
+                        font-size: 0.75rem;
+                        font-weight: bold;
+                        padding-left: 4vw;
+                        margin-top: 1vw;
                     }
                 }
 
-                .checkBtn {
+                .close {
                     width: 100%;
-                    height: 9.87vw;
+                    height: 11vw;
                     @include mainBtn;
-                    flex-shrink: 0;
                 }
             }
         }
 
         //使用條款
         &.ruleWindow {
-            width: 92.27vw;
-            height: auto;
 
             .content {
                 width: 100%;
-                height: calc(68vh - 120px);
-                box-sizing: border-box;
-                padding: 24px 16px;
+                height: 66vh;
                 overflow-y: auto;
+                padding: 5vw;
 
                 .ruleBody {
                     width: 100%;
@@ -371,24 +277,25 @@
 
                     h2 {
                         color: $mainWord_1;
-                        font-size: 4.3vw;
+                        font-size: 1.2rem;
                         font-weight: bold;
-                        margin-bottom: 8px;
+                        margin-bottom: 2vw;
                     }
 
                     div {
-                        margin: 15px;
+                        width: 100%;
+                        height: auto;
+                        padding: 3vw;
+                        margin-bottom: 2vw;
 
                         p {
-                            color: $mainWord_3;
-                            font-size: 3.4vw;
+                            color: $mainWord_2;
+                            font-size: 0.85rem;
                             font-weight: bold;
-                            line-height: 4.2vw;
-                            margin-bottom: 10px;
-                            letter-spacing: 1px;
+                            line-height: 1.2rem;
 
                             a {
-                                color: $click;
+                                color: $subWord_1;
                             }
                         }
                     }
@@ -396,46 +303,44 @@
             }
 
             button {
-                display: block;
-                margin: 0 auto 15px;
                 width: 90%;
-                height: 9.87vw;
+                height: 11vw;
                 @include mainBtn;
+                display: block;
+                margin: 0 auto 5vw;
             }
         }
 
         //最新公告
         &.news {
-            width: 92.27vw;
-            height: auto;
 
             .box {
                 width: 100%;
                 height: auto;
-                box-sizing: border-box;
-                padding: 20px 20px 30px;
+                min-height: 50vh;
+                padding: 0 5vw 5vw;
 
                 .typeList {
                     width: 100%;
                     height: auto;
-                    display: flex;
-                    border-bottom: solid 1px $mainBorder_1;
+                    display: grid;
+                    grid-template-columns: repeat(3,1fr);
+                    gap: 0 2vw;
+                    margin-bottom: 5vw;
     
                     li {
                         width: auto;
-                        min-width: 16vw;
-                        height: 7vw;
-                        @include bigGrayBtn;
-                        margin-right: 8px;
+                        height: 11vw;
+                        @include thirdBtn;
                     }
                 }
     
                 .content {
+                    display: none;
                     width: 100%;
                     height: auto;
-                    max-height: 324px;
+                    max-height: 50vh;
                     overflow-y: auto;
-                    display: none;
     
                     &.display {
                         display: block;
@@ -443,19 +348,22 @@
     
                     li {
                         width: 100%;
-                        height: 45px;
-                        border-bottom: solid 1px $mainBorder_1;
-                        display: flex;
-                        align-items: center;
+                        height: auto;
+                        background: $mainBG_2;
+                        border-radius: 2vw;
+                        border: solid 1px $mainBorder_1;
+                        padding: 4vw;
+                        margin-bottom: 3vw;
+
+                        &:last-child {
+                            margin: 0;
+                        }
     
                         p {
                             color: $mainWord_1;
-                            font-size: 3.7vw;
+                            font-size: 0.85rem;
                             font-weight: bold;
-                            width: 100%;
-                            overflow: hidden;
-                            white-space: nowrap;
-                            text-overflow: ellipsis;
+                            line-height: 1.2rem;
                         }
                     }
                 }
@@ -464,118 +372,66 @@
 
         //遊戲轉帳彈窗
         &.gameWindow {
-            width: 92.27vw;
-            height: auto;
 
             form {
                 width: 100%;
                 height: auto;
-                box-sizing: border-box;
-                padding: 24px 16px 0;
-                border-bottom: solid 1px $mainBorder_1;
+                padding: 5vw;
 
                 .row {
+                    width: 100%;
+                    height: auto;
                     display: flex;
                     align-items: center;
-                    margin-bottom: 6vw;
+                    margin-bottom: 4vw;
 
-                    &:nth-of-type(2),
-                    &:nth-of-type(3) {
-                        margin-bottom: 2vw;
+                    &:nth-of-type(5) {
+                        margin: 7vw 0;
                     }
 
                     &.btnBox {
                         display: grid;
-                        grid-template-columns: repeat(2,1fr);
-                        grid-gap: 5px;
-                        margin: 0 0 4vw 36vw;
+                        grid-template-columns: repeat(4,1fr);
+                        gap: 1vw;
+                        margin-bottom: 7vw;
 
                         button {
                             width: auto;
-                            height: 35px;
-                            margin-bottom: 5px;
-                            @include noBgBtn_Normal;
-                            font-size: 3.4vw;
-                        }
-                    }
-
-                    &.checkBtn {
-
-                        button {
-                            width: 100%;
-                            height: 9.87vw;
-                            @include mainBtn;
-                            margin-left: 36vw;
+                            height: 11vw;
+                            @include fourthBtn;
                         }
                     }
 
                     .smallTitle {
-                        width: 36vw;
-                        height: auto;
-                        color: $mainWord_2;
-                        font-size: 3.4vw;
+                        color: $mainWord_1;
+                        font-size: 0.85rem;
                         font-weight: bold;
-                        letter-spacing: 1px;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
+                        margin-right: 7vw;
                         flex-shrink: 0;
                     }
 
-                    .gameName {
+                    .money {
                         color: $mainWord_1;
-                        font-size: 5vw;
+                        font-size: 1.2rem;
                         font-weight: bold;
                     }
 
                     input {
                         width: 100%;
-                        height: 9.87vw;
+                        height: 11vw;
                         @include mainInput;
                     }
-
-                    .arrow_ic {
-                        display: block;
-                        width: 4vw;
-                        height: 3vw;
-                        transform: rotate(90deg);
-                        margin-left: 18vw;
+                    
+                    .checkBtn {
+                        width: 100%;
+                        height: 11vw;
+                        @include mainBtn;
                     }
-                }
-            }
 
-            .enterBtn {
-                display: block;
-                width: 90%;
-                height: 9.87vw;
-                margin: 4.8vw auto;
-                @include mainBtn;
-            }
-        }
-
-        //lang
-        &.langWindow {
-            width: 92.27vw;
-            height: auto;
-
-            ul {
-                width: 100%;
-                height: auto;
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: center;
-                box-sizing: border-box;
-                padding: 3.2vw;
-                
-                li {
-                    width: 100%;
-                    height: 9.87vw;
-                    margin-bottom: 2.4vw;
-                    @include noBgBtn_Normal;
-
-                    &:last-child {
-                        margin: 0;
+                    .betBtn {
+                        width: 100%;
+                        height: 11vw;
+                        @include fifthBtn;    
                     }
                 }
             }
@@ -583,186 +439,478 @@
 
         //更變密碼
         &.passwordWindow {
-            width: 92.27vw;
-            height: auto;
 
             .content {
                 width: 100%;
                 height: auto;
-                text-align: center;
-                padding: 24px;
-                box-sizing: border-box;
+                padding: 5vw;
 
                 input {
                     width: 100%;
-                    height: 9.87vw;
-                    margin-bottom: 30px;
+                    height: 11vw;
                     @include mainInput;
+                    margin-bottom: 2vw;
                 }
 
                 button {
                     width: 100%;
-                    height: 9.87vw;
+                    height: 11vw;
                     @include mainBtn;
+                    margin-top: 7vw;
                 }
             }
         }
 
         //修改手機
         &.phoneWindow {
-            width: 92.27vw;
-            height: auto;
 
             .smallTitle {
                 width: 100%;
                 height: auto;
                 color: $mainWord_1;
-                font-size: 4vw;
+                font-size: 0.85rem;
                 font-weight: bold;
-                box-sizing: border-box;
-                padding: 24px;
+                text-align: center;
+                padding: 4vw 0 9vw;
+
+                span {
+                    display: block;
+                    margin-bottom: 4vw;
+                }
             }
 
             form {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                box-sizing: border-box;
-                padding: 0 24px 24px;
-                overflow: auto;
+                width: 100%;
+                height: auto;
+                padding: 0 5vw 5vw;
 
                 label {
+                    display: block;
                     width: 100%;
                     height: auto;
                     position: relative;
-                    margin-bottom: 20px;
+                    margin-bottom: 2vw;
 
                     input {
                         width: 100%;
-                        height: 9.87vw;
+                        height: 13vw;
                         @include mainInput;
                     }
 
-                    .cellphoneCheck {
-                        width: 100%;
-                        height: 9.87vw;
+                    button {
+                        width: auto;
+                        height: 13vw;
                         @include secondBtn;
+                        font-size: 0.75rem;
+                        text-align: left;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%) scale(0.8);
+                        transform-origin: right;
+                        right: 2vw;
                     }
                 }
 
-                .remind {
+                .cellphoneCheck {
                     width: 100%;
-                    font-size: 3vw;
-                    color: $remind;
-                    font-weight: bold;
-                    margin-top: 10px;
-                    line-height: 4vw;
-                }
-
-                .checkBtn {
-                    width: 100%;
-                    height: 9.87vw;
+                    height: 11vw;
                     @include mainBtn;
+                    margin-top: 7vw;
                 }
             }
         }
 
-        //下載APP
-        &.downloadBox {
-            width: 92.27vw;
-            height: auto;
+        //查看紅利詳情 / 歷史投注紀錄詳情
+        &.pointWindow,
+        &.betHistoryWindow {
 
-            .box {
+            .content {
                 width: 100%;
                 height: auto;
-                box-sizing: border-box;
-                padding: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                max-height: 112vw;
+                overflow-y: auto;
+                padding: 5vw 5vw 10vw;
 
-                .img {
-                    width: 48px;
-                    height: 48px;
+                .smallTitle {
+                    color: $mainWord_1;
+                    font-size: 0.85rem;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-bottom: 2vw;
+                }
+
+                table {
+                    width: 100%;
+                    background: $mainBG_1;
+                    border-radius: 2vw;
+                    box-shadow: inset 0 0 3px $mainBorder_1;
+
+                    &:not(:first-child) {
+                        margin-top: 4vw;
+                    }
+
+                    tr {
+                        width: 100%;
+                        height: auto;
+
+                        &:first-child {
+                        
+                            td {
+                                margin-top: 2vw;
+                            }
+                        }
+                        
+                        td {
+                            width: 50%;
+                            height: auto;
+                            vertical-align: middle;
+                            padding: 5vw 4vw;
+
+                            &:first-child {
+                                font-weight: bold;
+                            }
+
+                            &:last-child {
+
+                                p {
+                                    text-align: center;
+                                }
+                            }
+
+                            p {
+                                color: $mainWord_1;
+                                font-size: 0.85rem;
+                                white-space: nowrap;
+                                line-height: 1rem;
+                            }
+                        }
+                    }
+                }
+
+                input {
+                    width: 100%;
+                    height: 11vw;
+                    @include mainInput;
+                    text-align: center;
+                    padding: 0;
+                }
+            }
+        }
+
+        //查看流水
+        &.waterWindow {
+
+            .content {
+                width: 100%;
+                height: auto;
+                padding: 5vw 5vw 10vw;
+
+                ul {
+                    width: 100%;
+                    height: auto;
+                    background: $mainBG_3;
+                    border: solid 1px $mainBorder_1;
+                    border-radius: 3vw;
+
+                    li {
+                        width: 100%;
+                        height: 11vw;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0 4vw;
+
+                        &.title {
+                            border-bottom: solid 1px $mainBorder_1;
+
+                            p {
+                                color: $subWord_1;
+                                font-size: 1.2rem;
+                                
+                                &:last-child {
+                                    width: auto;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+
+                        p {
+                            color: $mainWord_1;
+                            font-size: 0.85rem;
+                            font-weight: bold;
+            
+                            &:last-child {
+                                width: 50%;
+                                font-weight: normal;
+                                text-align: center;
+            
+                                &.money {
+                                    color: $subWord_2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //投注紀錄帳號+平台彈窗
+        &.accWindow,
+        &.platWindow {
+
+            .content {
+                width: 100%;
+                height: auto;
+                max-height: 67vh;
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 3vw;
+                overflow-y: auto;
+                padding: 5vw;
+
+                button {
+                    width: auto;
+                    height: 11vw;
+                    @include fourthBtn;
+
+                    &:first-child {
+                        grid-column-start: 1;
+                        grid-column-end: 4;
+                    }
                 }
             }
         }
 
         //任務詳情
         &.eventWindow {
-            width: 92.27vw;
-            height: auto;
 
             .content {
                 width: 100%;
                 height: auto;
-                max-height: 76vh;
+                max-height: 50vh;
                 overflow-y: auto;
-                box-sizing: border-box;
-                padding: 24px 24px 0;
+                padding: 0 5vw 5vw;
 
                 p {
                     color: $mainWord_1;
-                    font-size: 14px;
-                    letter-spacing: 1px;
+                    font-size: 0.85rem;
                     font-weight: bold;
-                    line-height: 18px;
-                    margin-bottom: 8px;
+                    line-height: 1.2rem;
+                    margin-bottom: 2vw;
                     word-break: break-all;
                 }
 
                 img {
-                    margin-bottom: 10px;
+                    margin-bottom: 2vw;
                 }
             }
 
-            .btnBox {
+            button {
+                width: 92%;
+                height: 11vw;
+                @include mainBtn;
+                margin: 4vw auto;
+            }
+        }
+
+        //語言
+        &.langWindow {
+
+            .box {
                 width: 100%;
                 height: auto;
-                padding: 20px 0;
-                text-align: center;
+                padding: 8vw 4vw;
 
-                button {
-                    width: 92%;
-                    height: 42px;
-                    @include mainBtn;
+                ul {
+                    width: 100%;
+                    height: auto;
+
+                    li {
+                        width: 100%;
+                        height: 11vw;
+                        @include fourthBtn;
+                        margin-bottom: 2vw;
+
+                        &:last-child {
+                            margin: 0;
+                        }
+                    }
                 }
             }
         }
 
-        //loading
-        .loading {
-            width: 92.27vw;
-            height: auto;
+        //退傭代理
+        &.agentWindow {
 
-            .content {
+            form {
                 width: 100%;
-                height: 60vw;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
+                height: auto;
+                max-height: 66vh;
+                overflow-y: auto;
+                padding: 5vw;
 
-                div {
-                    width: 30vw;
-                    height: 30vw;
-                    animation: round 2s linear 0s infinite;
-                }
+                label {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                    margin-bottom: 2vw;
 
-                p {
-                    margin-top: 20px;
-                    color: $mainWord_4;
-                    font-weight: bold;
-                }
+                    .itemName {
+                        color: $mainWord_1;
+                        font-size: 1rem;
+                        font-weight: bold;
+                        margin-bottom: 1vw;
 
-                @keyframes round {
-                    0% {
-                        transform: rotate(0);
+                        span {
+                            color: $remind;
+                            margin-right: 1vw;
+                        }
                     }
 
-                    100% {
-                        transform: rotate(360deg);
+                    input[type="text"] {
+                        width: 100%;
+                        height: 13vw;
+                        @include mainInput;
                     }
+
+                    button {
+                        width: auto;
+                        height: 13vw;
+                        @include secondBtn;
+                        font-size: 0.75rem;
+                        text-align: left;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%) scale(0.8);
+                        transform-origin: right;
+                        right: 2vw;
+                    }
+
+                    .remind {
+                        color: $mainWord_2;
+                        font-size: 0.75rem;
+                        font-weight: bold;
+                        padding-left: 4vw;
+                        margin-top: 1vw;
+                    }
+
+                    ul {
+                        margin-top: 1vw;
+
+                        li {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 10px;
+
+                            input {
+                                width: 4vw;
+                                height: 4vw;
+                                background: transparent;
+                                border-radius: 0.5vw;
+                                margin: 0 2vw 0 0;
+                                position: relative;
+                                cursor: pointer;
+
+                                &::before {
+                                    content: "";
+                                    width: 4vw;
+                                    height: 4vw;
+                                    border: 0.5vw solid $mainBorder_1;
+                                    border-radius: 1vw;
+                                    background: $mainWord_1;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                }
+
+                                &::after {
+                                    content: "√";
+                                    font-size: 4vw;
+                                    color: $subBG_1;
+                                    position: absolute;
+                                    top: -0.5vw;
+                                    left: 1vw;
+                                    opacity: 0;
+                                }
+                                
+                                &:checked {
+                                    &::after {
+                                        opacity: 1;
+                                    }
+                                }                                
+                            }
+
+                            p {
+                                color: $subWord_1;
+                                font-size: 0.8rem;
+                                font-weight: bold;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+
+                .check {
+                    width: auto;
+                    height: 6vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 4vw;
+
+                    input {
+                        width: 4vw;
+                        height: 4vw;
+                        background: transparent;
+                        margin: 0 3vw 0 0;
+                        position: relative;
+                        cursor: pointer;
+
+                        &::before {
+                            content: "";
+                            width: 4vw;
+                            height: 4vw;
+                            border: 2px solid $mainBorder_2;
+                            margin-right: 10px;
+                            border-radius: 50px;
+                            background: transparent;
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            transform: translateY(-50%);
+                        }
+
+                        &::after {
+                            content: "⬤";
+                            color: $mainWord_1;
+                            font-size: 1rem;
+                            position: absolute;
+                            top: -1vw;
+                            left: 0.8vw;
+                            opacity: 0;
+                        }
+                        
+                        &:checked {
+                            &::after {
+                                opacity: 1;
+                            }
+                        } 
+                    }
+
+                    p {
+                        color: $mainWord_1;
+                        font-size: 14px;
+                        font-weight: bold;
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+
+                .close {
+                    width: 100%;
+                    height: 11vw;
+                    @include mainBtn;
                 }
             }
         }

@@ -5,21 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../js/slick-1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="../js/slick-1.8.1/slick/slick-theme.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-    <script src="../js/slick-1.8.1/slick/slick.min.js"></script>
     <script src="../js/javascript.js"></script>
-    <link rel="shortcut icon" href="../images/NJLOGO_64x64.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/MEXLOGO_64x64.ico" type="image/x-icon">
 </head>
 <body>
     <!--header-->
     <header>
         <!--content-->
         <div class="content">
+            <p class="title">Miembro VIP</p>
             <i class="back_arrow" onclick="window.location.href='./member.html'"></i>
-            <div class="title">VIPクラブ</div>
         </div>
     </header>
     <!--main-->
@@ -28,61 +24,74 @@
         <div class="vipWrap">
             <!--上部-->
             <div class="topBox">
-                <div class="board">
-                    <div class="content">
-                        <p class="account">ゴールド会員</p>
-                        <div class="textBox">
-                            <p>現在の入金</p>
-                            <div>
-                                <p>¥0.00</p>
-                                <p>( 0/3,000,000 )</p>
-                            </div>
-                        </div>
-                        <div class="textBox">
-                            <p>現在のポイント</p>
-                            <div>
-                                <p>¥0.00</p>
-                                <p>( 0/30,000,000 )</p>
-                            </div>
-                        </div>
-                        <div class="medal"></div>
+                <div class="content">
+                    <div>
+                        <p class="account">
+                            Nivel actual :
+                            <span>Membresia General</span>
+                        </p>
+                        <p>
+                            Depósito:
+                            <span>$3000.00</span>
+                        </p>
+                        <p>
+                            Monto de turnover:
+                            <span>0</span>
+                        </p>
                     </div>
-                    <div class="exBar">
-                        <div class="level">
-                            <p class="cur">ゴールド会員</p>
-                            <p>プラチナ会員</p>
-                        </div>
-                        <div class="bar">
-                            <div class="cur">
-                                <p>0.0%</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="medal level_1"></div>
+                </div>
+            </div>
+            <!--等級-->
+            <div class="lvBox">
+                <div class="lv_row">
+                    <ul>
+                        <li class="active">General</li>
+                        <li>VIP</li>
+                        <li>plata</li>
+                        <li>Oro</li>
+                        <li>Platino</li>
+                        <li>Rubí</li>
+                        <li>Diamante</li>
+                        <li>Corona</li>
+                    </ul>
+                </div>
+                <div class="cardBox">
+                    <div class="lv_1 display"></div>
+                    <div class="lv_2"></div>
+                    <div class="lv_3"></div>
+                    <div class="lv_4"></div>
+                    <div class="lv_5"></div>
+                    <div class="lv_6"></div>
+                    <div class="lv_7"></div>
                 </div>
             </div>
             <!--會員權利-->
             <div class="enjoyBox">
-                <p class="title">ゴールド会員</p>
+                <p class="title">Para todos los miembros, disfruta.</p>
                 <ul>
                     <li>
-                        毎回入金申請最高入金可能額
-                        <p>200,000</p>
+                        <p class="smallTitle">Límite de depósito</p>
+                        <p>300000</p>
                     </li>
                     <li>
-                        毎回出金申請最高出金可能額
-                        <p>200,000</p>
+                        <p class="smallTitle">Límite de retiro</p>
+                        <p>300000</p>
                     </li>
                     <li>
-                        出金手数料
-                        <p>0</p>
+                        <p class="smallTitle">Número de Retiros Gratis</p>
+                        <p>5</p>
                     </li>
                 </ul>
             </div>
             <!--查看VIP詳情-->
-            <div class="checkBtn" onclick="window.location.href='./vip_page.html'">
-                <p>VIP詳細</p>
+            <button class="infoBtn" onclick="window.location.href='./vip_page.html'">
+                <p>
+                    <i class="vip_ic"></i>
+                    Más información VIP
+                </p>
                 <i class="arrow_ic"></i>
-            </div>
+            </button>
         </div>
     </main>
     <!--footer-->
@@ -90,23 +99,23 @@
         <ul>
             <li onclick="window.location.href='./index_inner.html'">
                 <i class="menu_ic"></i>
-                <p>ホーム</p>
+                <span></span>
             </li>
             <li onclick="window.location.href='./event.html'">
                 <i class="event_ic"></i>
-                <p>プロモーション</p>
+                <span></span>
             </li>
             <li onclick="window.location.href='./wallet.html'">
                 <i class="wallet_ic"></i>
-                <p>ウォレット</p>
+                <span></span>
             </li>
             <li onclick="window.location.href='./help_often_contact.html'">
                 <i class="service_ic"></i>
-                <p>カスタマーサービス</p>
+                <span></span>
             </li>
-            <li onclick="window.location.href='./member.html'">
-                <i class="center_ic"></i>
-                <p>マイページ</p>
+            <li class="active" onclick="window.location.href='./member.html'">
+                <i class="member_ic"></i>
+                <span></span>
             </li>
         </ul>
     </footer>
@@ -166,5 +175,7 @@
             </ul>
         </div>
     </div>
+    <!--背景-->
+    <div class="bg"></div>
 </body>
 </html>

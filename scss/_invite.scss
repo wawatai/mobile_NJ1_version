@@ -1,111 +1,51 @@
 //邀請會員
 .inviteWrap {
     width: 100%;
-    height: calc(100vh - 96px);
-    overflow-y: auto;
-    background: $mainBG_1;
+    height: auto;
     
     ul {
         width: 100%;
         height: auto;
+        margin-top: 4vw;
 
         li {
             width: 100%;
-            height: auto;
-            box-sizing: border-box;
-            padding: 16px;
-            border-bottom: solid 1px $mainBorder_1;
+            height: 11vw;
+            background: $member_info_BG;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0 4vw;
+            margin-bottom: 0.5vw;
 
-            &.col {
-                flex-direction: column;
-            }
-
-            .title {
-                width: 40%;
+            &.qrBox {
                 height: auto;
-                flex-shrink: 0;
-                color: $mainWord_2;
-                font-size: 14px;
-                font-weight: bold;
+                padding: 2vw 4vw;
 
-                &.long {
-                    width: 60%;
-                    font-size: 12px;
-                    line-height: 18px;
+                .qr {
+                    width: 20vw;
+                    height: 20vw;
                 }
             }
 
-            .text {
-                width: 100%;
-                height: auto;
+            p {
                 color: $mainWord_1;
-                font-size: 14px;
+                font-size: 0.75rem;
                 font-weight: bold;
-                text-align: right;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-
-            .copy {
-                width: 30px;
-                height: 30px;
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-left: 40px;
-                flex-shrink: 0;
-                border-radius: 3px;
-                border: solid 1px $mainBorder_1;
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    width: 16px;
-                    height: 16px;
-                }
-            }
-
-            .box {
-                width: 100%;
-                height: auto;
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
 
-                .linkIcon {
-                    display: block;
-                    width: 36px;
-                    height: 36px;
+                button {
+                    width: auto;
+                    height: 7vw;
+                    @include secondBtn;
+                    margin-left: 2vw;
                 }
-            }
-        }
-    }
 
-    .remindBox {
-        width: 100%;
-        height: auto;
-        box-sizing: border-box;
-        padding: 16px;
-
-        p {
-            color: $mainWord_3;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            line-height: 18px;
-
-            &.title {
-                color: $mainWord_1;
-                font-size: 14px;
-                margin: 15px 0 8px;
-    
-                &:first-child {
-                    margin-top: 0;
+                span {
+                    max-width: 50%;
+                    @include hiddenText;
                 }
             }
         }

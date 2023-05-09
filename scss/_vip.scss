@@ -1,119 +1,135 @@
 //VIP會員
 .vipWrap {
     width: 100%;
-    height: calc(100vh - 96px);
-    overflow-y: auto;
-    background: $mainBG_1;
+    height: auto;
 
     //上部
     .topBox {
         width: 100%;
         height: auto;
-        padding-bottom: 5px;
-        background: $mainBG_3;
+        padding: 4vw 3vw;
 
-        .board {
+        .content {
             width: 100%;
             height: auto;
-            box-sizing: border-box;
-            padding: 0 16px 16px;
+            background: $subBG_1;
+            border-radius: 3vw;
+            display: flex;
+            justify-content: space-between;
+            padding: 4vw 3vw;
 
-            .content {
-                position: relative;
-                padding-top: 12px;
-                width: 100%;
+            div:not(.medal) {
+                width: auto;
                 height: auto;
 
                 .account {
-                    font-size: 4.3vw;
-                    margin-bottom: 18px;
-                    letter-spacing: 2px;
+                    color: $subWord_1;
+                    font-size: 0.85rem;
                     font-weight: bold;
-                    color: $mainWord_1;
-                }
-
-                .textBox {
-                    display: flex;
-                    margin-bottom: 15px;
-
-                    &>p {
-                        width: 30vw;
-                        color: $mainWord_4;
-                        font-size: 13px;
-                        font-weight: bold;
-                        letter-spacing: 1px;
-                    }
-
-                    div {
-                        width: auto;
-                        height: auto;
-
-                        p {
-                            color: $mainWord_4;
-                            font-size: 15px;
-                            font-weight: bold;
-
-                            &:first-child {
-                                color: $mainWord_2;
-                                margin-bottom: 6px;
-                            }
-                        }
+                    margin-bottom: 9vw;
+    
+                    span {
+                        color: $mainWord_1;
                     }
                 }
+    
+                p:not(.account) {
+                    color: $mainWord_2;
+                    font-size: 0.85rem;
+                    font-weight: bold;
 
-                .medal {
-                    width: 22.93vw;
-                    height: 30.13vw;
-                    position: absolute;
-                    top: 3vw;
-                    right: 1.5vw;
+                    span {
+                        color: $mainWord_1;
+                        margin-left: 3vw;
+                    }
+
+                    &:last-child {
+                        margin-top: 3vw;
+                    }
                 }
             }
 
-            .exBar {
+            .medal {
+                width: 30vw;
+                height: 30vw;
+            }
+        }
+    }
+
+    //等級
+    .lvBox {
+        width: 100%;
+        height: auto;
+        background: $jumpWindow_BG;
+        padding: 3vw;
+        margin-bottom: 3vw;
+        
+        .lv_row {
+            width: 100%;
+            height: auto;
+            position: relative;
+            overflow-x: auto;
+
+            ul {
                 width: 100%;
                 height: auto;
+                display: flex;
+                position: relative;
+                z-index: 1;
 
-                .level {
-                    width: 100%;
-                    height: auto;
-                    display: flex;
-                    justify-content: space-between;
-                    margin-bottom: 9px;
-
-                    p {
-                        letter-spacing: 1px;
-                        font-weight: bold;
-                        font-size: 14px;
-                        color: $mainWord_2;
-                    }
-                }
-
-                .bar {
-                    width: 100%;
-                    height: 8px;
-                    border-radius: 4px;
-                    background: $vip_LevelBar;
-                    position: relative;
+                li {
+                    width: 18vw;
+                    height: 7vw;
+                    background: $vip_lv_BG;
+                    border-radius: 30vw;
+                    color: $mainWord_1;
+                    font-size: 0.75rem;
+                    font-weight: bold;
                     display: flex;
                     align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    flex-shrink: 0;
+                    margin-right: 10vw;
 
-                    .cur {
+                    &::before {
+                        content: "";
                         position: absolute;
-                        width: auto;
-                        height: auto;
-                        border-radius: 4px;
-                        background: $vip_LevelCur;
-                        left: 0;
-                        padding: 2px 5px;
-                        border-radius: 30px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: -10vw;
+                        width: 10vw;
+                        height: 1vw;
+                        background: $vip_lv_BG;
+                    }
 
-                        p {
-                            color: $vip_Word;
-                            font-size: 12px;
-                            font-weight: bold;
+                    &:last-child {
+                        margin: 0;
+
+                        &::before {
+                            display: none;
                         }
                     }
+
+                    &.active {
+                        background: $vip_lv_ActiveBG;
+                    }
+                }
+            }
+        }
+
+        .cardBox {
+            width: 100%;
+            height: auto;
+            padding: 5vw 3vw 3vw;
+
+            div {
+                display: none;
+                width: 100%;
+                height: 22vh;
+
+                &.display {
+                    display: block;
                 }
             }
         }
@@ -123,59 +139,74 @@
     .enjoyBox {
         width: 100%;
         height: auto;
-        box-sizing: border-box;
-        padding: 16px;
-        margin: 10px 0;
-        background: $mainBG_3;
+        background: $jumpWindow_BG;
+        padding: 4vw 3vw;
+        margin-bottom: 3vw;
 
         .title {
-            color: $mainWord_1;
-            font-size: 4.3vw;
+            color: $subWord_1;
+            font-size: 1rem;
             font-weight: bold;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
+            padding-left: 2vw;
+            margin-bottom: 4vw;
         }
 
         ul {
             width: 100%;
             height: auto;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 3vw;
 
             li {
-                width: 100%;
-                height: auto;
-                padding: 6px 12px;
-                margin-bottom: 10px;
+                width: auto;
+                height: 8.5vh;
                 background: $mainBG_2;
-                border-radius: 3px;
-                font-size: 13px;
-                font-weight: bold;
-                color: $mainWord_4;
-                box-sizing: border-box;
-
-                &:last-child {
-                    margin: 0;
-                }
+                border: solid 1px $mainBorder_2;
+                border-radius: 3vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                overflow: hidden;
+                padding: 0 3vw;
 
                 p {
-                    font-size: 22px;
-                    color: $money;
-                    margin-top: 8px;
+                    color: $mainWord_1;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    @include hiddenText;
+
+                    &.smallTitle {
+                        color: $mainWord_2;
+                        font-size: 0.85rem;
+                    }
                 }
             }
         }
     }
     
     //查看VIP詳情
-    .checkBtn {
-        width: 92%;
-        height: 50px;
-        @include longBtn;
-        padding: 0 20px;
-        margin: 0 auto 10px;
+    .infoBtn {
+        width: 92vw;
+        height: 11vw;
+        @include thirdBtn_secBG;
+        justify-content: space-between;
+        padding: 0 5vw;
+        margin: 0 auto;
+
+        p {
+            display: flex;
+            align-items: center;
+
+            i {
+                width: 7vw;
+                height: 7vw;
+                margin-right: 5vw;
+            }
+        }
 
         .arrow_ic {
-            display: block;
-            width: 2vw;
+            width: 4vw;
             height: 4vw;
             transform: scaleX(-1);
         }
@@ -185,71 +216,22 @@
 //各層級詳情
 .vipDetail {
     width: 100%;
-    height: calc(100vh - 96px);
-    overflow-y: auto;
-    padding: 16px;
-    box-sizing: border-box;
-    background: $mainBG_1;
+    height: auto;
+    padding: 5vw;
 
     .lvWrap {
         width: 100%;
         height: auto;
-        position: relative;
-
-        .title {
-            font-size: 17px;
-            font-weight: bold;
-            color: $mainWord_4;
-            margin: 0 0 20px;
-        }
 
         .list {
             width: 100%;
             height: auto;
-            display: flex;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            position: relative;
+            background: $mainBG_1;
             border: solid 1px $mainBorder_1;
-            background: $mainBG_2;
-
-            // i {
-            //     display: flex;
-            //     align-items: center;
-            //     justify-content: center;
-            //     width: 10px;
-            //     height: 40px;
-            //     position: absolute;
-            //     top: 0;
-            //     background: $mainBG_1;
-            //     z-index: 1;
-
-            //     &.prev {
-            //         left: 19vw;
-
-            //         &::before {
-            //             content: "";
-            //             position: absolute;
-            //             width: 7px;
-            //             height: 14px;
-            //             z-index: 1;
-            //         }
-            //     }
-
-            //     &.next {
-            //         right: 1vw;
-
-            //         &::before {
-            //             content: "";
-            //             position: absolute;
-            //             width: 7px;
-            //             height: 14px;
-            //             z-index: 1;
-            //             transform: scaleX(-1);
-            //         }
-            //     }
-            // }
+            border-radius: 5px;
+            display: flex;
+            overflow: hidden;
+            margin-bottom: 4vw;
 
             .left {
                 width: 38%;
@@ -257,41 +239,35 @@
                 flex-shrink: 0;
 
                 li {
-                    height: 40px;
+                    width: 100%;
+                    height: 11vw;
                     display: flex;
                     align-items: center;
 
                     &.smallTitle {
                         border-bottom: solid 1px $mainBorder_1;
-
-                        p {
-                            color: $mainWord_1;
-                        }
                     }
 
                     p {
                         width: 100%;
-                        box-sizing: border-box;
                         border-right: solid 1px $mainBorder_1;
+                        color: $mainWord_1;
+                        font-size: 0.85rem;
                         font-weight: bold;
                         text-align: center;
-                        font-size: 14px;
-                        color: $mainWord_1;
                     }
                 }
             }
 
             .right{
-                width: 80%;
+                width: 100%;
                 height: auto;
                 display: flex;
                 overflow-x: auto;
-                position: relative;
 
                 ul {
                     width: auto;
                     height: auto;
-                    flex-shrink: 0;
 
                     &:last-child {
 
@@ -305,112 +281,27 @@
 
                     li {
                         width: auto;
-                        height: 40px;
+                        height: 11vw;
                         display: flex;
                         align-items: center;
     
                         &.smallTitle {
                             border-bottom: solid 1px $mainBorder_1;
-    
-                            p {
-                                color: $mainWord_1;
-                            }
                         }
     
                         p {
                             width: 100%;
-                            box-sizing: border-box;
                             border-right: solid 1px $mainBorder_1;
+                            color: $mainWord_1;
+                            font-size: 0.85rem;
                             font-weight: bold;
                             text-align: center;
-                            font-size: 14px;
-                            color: $mainWord_1;
-                            box-sizing: border-box;
-                            padding: 0 15px;
+                            white-space: nowrap;
+                            padding: 0 2vw;
                         }
                     }
                 }
             }
-
-            // .finger {
-            //     display: block;
-            //     width: 7vw;
-            //     height: 10vw;
-            //     position: absolute;
-            //     right: 4vw;
-            //     bottom: 2vw;
-            //     animation: disappear 4s ease 0s infinite;
-    
-            //     &::before {
-            //         content: "";
-            //         position: absolute;
-            //         top: -10px;
-            //         left: -20%;
-            //         width: 0;
-            //         height: 0;
-            //         border-style: solid;
-            //         border-color: transparent $remind;
-            //         border-width: 6px 8px 6px 0;
-            //         animation: moveL 2s ease 0s infinite;
-            //     }
-    
-            //     &::after {
-            //         content: "";
-            //         position: absolute;
-            //         top: -10px;
-            //         right: 12%;
-            //         width: 0;
-            //         height: 0;
-            //         border-style: solid;
-            //         border-color: transparent $remind;
-            //         border-width: 6px 0 6px 8px;
-            //         animation: moveR 2s ease 0s infinite;
-            //     }
-            // }
-    
-            // @keyframes disappear {
-            //     0% {
-            //         opacity: 0;
-            //     }
-    
-            //     25% {
-            //         opacity: 1;
-            //     }
-    
-            //     75% {
-            //         opacity: 1;
-            //     }
-    
-            //     100% {
-            //         opacity: 0;
-            //     }
-            // }
-            // @keyframes moveL {
-            //     0% {
-            //         transform: translateX(0);
-            //     }
-    
-            //     50% {
-            //         transform: translateX(-140%);
-            //     }
-    
-            //     100% {
-            //         transform: translateX(0);
-            //     }
-            // }
-            // @keyframes moveR {
-            //     0% {
-            //         transform: translateX(0);
-            //     }
-    
-            //     50% {
-            //         transform: translateX(140%);
-            //     }
-    
-            //     100% {
-            //         transform: translateX(0);
-            //     }
-            // }
         }
     }
 
@@ -419,15 +310,20 @@
         height: auto;
 
         p {
-            color: $mainWord_3;
-            font-size: 3.4vw;
+            color: $mainWord_1;
+            font-size: 0.85rem;
             font-weight: bold;
-            line-height: 5vw;
-            margin-bottom: 10px;
+            line-height: 1.2rem;
+            margin-bottom: 2vw;
 
             &.title {
-                color: $mainWord_1;
-                font-size: 4vw;
+                color: $subWord_2;
+                font-size: 1rem;
+
+                &:first-child {
+                    color: $subWord_1;
+                    margin-bottom: 4vw;
+                }
             }
         }
     }

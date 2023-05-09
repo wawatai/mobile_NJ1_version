@@ -1,35 +1,33 @@
 html {
     width: 100%;
     height: 100%;
+    background: $BG;
+    font-size: 4vw;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 
     body {
         width: 100%;
         height: 100%;
-        box-sizing: border-box;
 
         main {
             width: 100%;
-            height: 100%;
-            box-sizing: border-box;
-            padding: 45px 0 50px;
+            height: auto;
             display: flex;
             flex-direction: column;
-            overflow-y: auto;
+            padding: 6vh 0 8vh;
         }
 
         .bg {
+            width: 100%;
+            height: 100%;
+            background: $BG;
             position: fixed;
             bottom: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
             z-index: -999;
-            background: $BG;
         }
 
         @import "./header";
-        @import "./ad";
         @import "./home";
         @import "./footer";
         @import "./jumpWindow";
@@ -49,5 +47,7 @@ html {
         @import "./withdrawal";
         @import "./searchPoint";
         @import "./invite";
+        @import "./kyc";
+        @import "./agent";
     }
 }

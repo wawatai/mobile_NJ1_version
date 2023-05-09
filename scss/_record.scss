@@ -1,100 +1,50 @@
 //投注紀錄
 .bettingWrap {
     width: 100%;
-    height: calc(100vh - 95px);
-    background: $mainBG_1;
-    overflow-y: auto;
-    box-sizing: border-box;
+    height: auto;
 
     .searchContent {
         width: 100%;
         height: auto;
-        box-sizing: border-box;
-        padding: 15px;
-        background: $mainBG_3;
-        margin-top: 10px;
+        padding: 4vw 3vw;
 
-        &.deal {
-            margin: 0;
-        }
-
-        .top {
+        .row {
             width: 100%;
             height: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
 
-            .helf {
-                width: 48%;
+            &:first-child {
+                margin-bottom: 4vw;
+            }
 
-                p {
-                    margin-bottom: 10px;
-                    font-size: 14px;
-                    font-weight: bold;
-                    letter-spacing: 1px;
-                    color: $mainWord_2;
-                }
-    
-                button {
-                    width: 100%;
-                    height: 42px;
-                    @include fakeSelect;
+            &.double {
+                display: flex;
+                justify-content: space-between;
+
+                .half {
+                    width: 48%;
+
+                    button {
+                        width: 100%;
+                        height: 11vw;
+                        @include mainSelect;
+                        text-align: left;
+                        border-radius: 2vw;
+                    }
                 }
             }
 
-            .full {
+            p {
+                color: $mainWord_1;
+                font-size: 0.85rem;
+                font-weight: bold;
+                margin-bottom: 2vw;
+            }
+
+            select {
                 width: 100%;
-
-                &:nth-of-type(1) {
-
-                    p {
-                        margin-top: 0;
-                    }
-                }
-
-                p {
-                    margin: 20px 0 10px;
-                    font-size: 14px;
-                    font-weight: bold;
-                    letter-spacing: 1px;
-                    color: $mainWord_2;
-                }
-
-                .inputBox {
-                    width: 100%;
-                    height: 42px;
-                    border: solid 1px $mainBorder_1;
-                    border-radius: 3px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-around;
-                    color: $mainWord_3;
-                    font-size: 16px;
-                    font-weight: bold;
-                    background: $mainBG_1;
-
-                    input {
-                        width: auto;
-                        height: 100%;
-                        border: none;
-                        background: none;
-                        color: $mainWord_3;
-                        font-size: 14px;
-                        font-weight: bold;
-                    }
-                }
-
-                .selectBox {
-                    width: 100%;
-                    height: auto;
-
-                    select {
-                        width: 100%;
-                        height: 42px;
-                        @include mainSelect;
-                    }
-                }
+                height: 11vw;
+                @include mainSelect;
+                border-radius: 2vw;
             }
         }
 
@@ -102,297 +52,152 @@
             width: 100%;
             height: auto;
             display: flex;
-            margin: 20px 0;
+            justify-content: space-between;
+            margin: 4vw 0;
 
             button {
-                width: 25%;
-                height: 38px;
-                @include noBgBtn_Normal;
-                border-left-width: 0;
-
-                &:nth-of-type(1) {
-                    border-radius: 5px 0 0 5px;
-                    border-left-width: 1px;
-                }
-
-                &:nth-of-type(2),
-                &:nth-of-type(3) {
-                    border-radius: 0;
-                }
-            
-                &:last-child {
-                    border-radius: 0 5px 5px 0;
-                }
+                width: 22%;
+                height: 10vw;
+                @include fourthBtn;
             }
         }
 
         .check {
             width: 100%;
-            height: 42px;
+            height: 11vw;
             @include mainBtn;
         }
     }
 
     .list {
+        display: none;
         width: 100%;
         height: auto;
-        box-sizing: border-box;
-        padding: 10px 14px;
+        padding: 0 4vw;
 
-        .noData {
-            display: none;
-            width: 100%;
-            height: auto;
-            box-sizing: border-box;
-            color: $mainWord_4;
-            font-weight: bold;
-            font-size: 14px;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0 40px;
-
-            &.display {
-                display: flex;
-            }
-
-            .img {
-                display: block;
-                width: 180px;
-                height: 180px;
-                margin-bottom: 20px;
-            }
-        }
-
-        .recordBox {
-            display: none;
-            width: 100%;
-            height: auto;
-
-            &.display {
-                display: block;
-            }
-
-            .titleBox {
-                width: 100%;
-                height: auto;
-                box-sizing: border-box;
-                padding: 16px;
-                border: solid 1px $mainBorder_1;
-                display: flex;
-                align-items: center;
-                border-radius: 5px;
-                margin-bottom: 10px;
-
-                i {
-                    display: block;
-                    width: 17px;
-                    height: 17px;
-                    margin-right: 8px;
-                }
-
-                p {
-                    color: $mainWord_1;
-                    font-size: 4vw;
-                    font-weight: bold;
-                }
-            }
-
-            .box {
-                width: 100%;
-                height: auto;
-                background: $mainBG_2;
-                border-radius: 5px;
-                box-sizing: border-box;
-                overflow: hidden;
-                margin-bottom: 10px;
-
-                &:last-child {
-                    margin: 0;
-                }
-
-                &>p {
-                    color: $mainWord_1;
-                    font-size: 4vw;
-                    font-weight: bold;
-                    display: flex;
-                    justify-content: space-between;
-                    margin-bottom: 10px;
-                    padding: 0 16px;
-
-                    &:nth-last-of-type(1) {
-                        margin-bottom: 16px;
-                    }
-
-                    &.title {
-                        font-size: 6vw;
-                        padding: 16px;
-                        margin: 0;
-                    }
-
-                    span {
-                        color: $money;
-
-                        &.win {
-                            color: $remind;
-                        }
-                        &.lose {
-                            color: $remind_Sp;
-                        }
-                    }
-                }
-
-                .innerBox {
-                    width: 100%;
-                    height: 0;
-                    padding: 0;
-                    box-sizing: border-box;
-                    background: $mainBG_3;
-                    max-height: 300px;
-                    overflow-y: auto;
-
-                    &.display {
-                        height: auto;
-                        padding: 16px;
-                    }
-
-                    ul {
-                        width: 100%;
-                        height: auto;
-                        border: solid 1px $mainBorder_1;
-                        border-radius: 3px;
-                        background: $mainBG_1;
-                        margin-bottom: 10px;
-                        box-sizing: border-box;
-
-                        &:last-child {
-                            margin: 0;
-                        }
-
-                        li {
-                            width: 100%;
-                            height: auto;
-                            box-sizing: border-box;
-                            padding: 0 10px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-                            margin-bottom: 10px;
-
-                            &.title {
-                                padding: 10px;
-                                border-bottom: solid 1px $mainBorder_1;
-                            }
-
-                            p {
-                                color: $mainWord_1;
-                                font-size: 4vw;
-                                font-weight: bold;
-                            }
-
-                            span {
-                                color: $money;
-                                font-size: 3.7vw;
-                                font-weight: bold;
-                                
-                                &.time {
-                                    color: $mainWord_4;
-                                    font-size: 3vw;
-                                }
-                                &.num {
-                                    color: $remind;
-                                    font-size: 3vw;
-                                }
-                                &.win {
-                                    color: $remind;
-                                }
-                                &.lose {
-                                    color: $remind_Sp;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .open {
-                    width: 100%;
-                    height: 45px;
-                    background: $mainBG_2;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: $mainWord_1;
-                    font-size: 4vw;
-                    font-weight: bold;
-                    border-top: solid 1px $mainBorder_1;
-
-                    .arrow_ic {
-                        display: block;
-                        width: 12px;
-                        height: 12px;
-                        margin-left: 9px;
-                        transition: 0.3s all;
-                    }
-
-                    &.active {
-
-                        .arrow_ic {
-                            transform: rotate(180deg);
-                        }
-                    }
-                }
-            }
+        &.display {
+            display: block;
         }
 
         .dealBox {
             display: none;
             width: 100%;
             height: auto;
-            border-radius: 5px;
+            background: $mainBG_1;
+            border-radius: 3vw;
             border: solid 1px $mainBorder_1;
-            background: $mainBG_2;
-            margin-bottom: 10px;
+            padding: 2vw 0;
+            margin-bottom: 4vw;
 
             &.display {
                 display: block;
             }
 
-            .title {
+            li {
                 width: 100%;
-                height: auto;
-                border-bottom: solid 1px $mainBorder_1;
-                color: $mainWord_1;
-                font-size: 4vw;
-                font-weight: bold;
+                height: 11vw;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                box-sizing: border-box;
-                padding: 12px 16px;
-                
-                .date {
-                    font-size: 3vw;
-                    color: $mainWord_4;
-                }
-            }
+                padding: 4vw;
 
-            ul {
-                width: 100%;
-                height: auto;
-                box-sizing: border-box;
-                padding: 0 16px;
-
-                li {
-                    width: 100%;
-                    height: 38px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
+                p {
                     color: $mainWord_1;
-                    font-size: 3.4vw;
+                    font-size: 0.85rem;
                     font-weight: bold;
 
-                    .num {
-                        color: $money;
+                    &:last-child {
+                        width: 50%;
+                        font-weight: normal;
+                        text-align: center;
+
+                        &.sus {
+                            color: $subWord_3;
+                        }
+
+                        &.fail {
+                            color: $subWord_2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .data {
+        display: none;
+        width: 100%;
+        height: auto;
+        padding: 0vw 3vw 4vw;
+
+        &.active {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            background: $mainBG_1;
+            border-radius: 2vw;
+            box-shadow: inset 0 0 3px $mainBorder_1;
+
+            &:not(:first-child) {
+                margin-top: 4vw;
+            }
+
+            tr {
+                width: 100%;
+                height: auto;
+
+                &:first-child {
+                   
+                    td {
+                        margin-top: 2vw;
+                    }
+                }
+
+                &:last-child {
+
+                    td {
+
+                        &:last-child {
+                            padding: 0 4vw;
+                        }
+                    }
+                }
+                
+                td {
+                    width: 50%;
+                    height: auto;
+                    vertical-align: middle;
+                    padding: 5vw 4vw;
+
+                    &:first-child {
+                        font-weight: bold;
+                    }
+
+                    &:last-child {
+
+                        p {
+                            text-align: center;
+                        }
+                    }
+
+                    p {
+                        color: $mainWord_1;
+                        font-size: 0.8rem;
+                        white-space: nowrap;
+                        line-height: 1rem;
+
+                        &.highlight {
+                            color: $subWord_3;
+                        }
+                    }
+
+                    button {
+                        width: 85%;
+                        height: 10vw;
+                        @include mainBtn;
+                        margin: 4vw auto;
                     }
                 }
             }
@@ -404,7 +209,6 @@
 .recordTop {
     width: 100%;
     height: auto;
-    background: $choose_BG;
 
     ul {
         width: 100%;
@@ -413,18 +217,35 @@
 
         li {
             width: 50%;
-            height: 45px;
-            box-sizing: border-box;
+            height: 11vw;
+            color: $mainWord_1;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4vw;
-            font-weight: bold;
-            color: $choose_Word;
+            position: relative;
+            opacity: 0.4;
 
-            &.active {
-                color: $choose_ActiveWord;
-                background: $choose_ActiveBG;
+            &::before {
+                display: none;
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 0.5vw;
+                background: $mainBorder_1;
+                border-radius: 30vw;
+                left: 0;
+                bottom: 0;
+            }
+
+            &:active,&.active {
+                opacity: 1;
+
+                &::before {
+                    display: block;
+                }
             }
         }
     }
@@ -433,114 +254,49 @@
 .waterBox {
     width: 100%;
     height: auto;
-    box-sizing: border-box;
-    padding: 16px;
-
-    .noData {
-        display: none;
-        width: 100%;
-        height: auto;
-        box-sizing: border-box;
-        color: $mainWord_4;
-        font-weight: bold;
-        font-size: 14px;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0 40px;
-
-        &.display {
-            display: flex;
-        }
-
-        .img {
-            display: block;
-            width: 180px;
-            height: 180px;
-            margin-bottom: 20px;
-        }
-    }
+    padding: 4vw;
 
     ul {
         width: 100%;
         height: auto;
+        background: $mainBG_1;
+        border: solid 1px $mainBorder_1;
+        border-radius: 3vw;
+        padding: 2vw 0;
+        margin-bottom: 4vw;
 
         li {
             width: 100%;
-            height: auto;
-            border-radius: 5px;
-            background: $mainBG_2;
-            border: solid 1px $mainBorder_1;
-            margin-bottom: 10px;
+            height: 11vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4vw;
 
             p {
-                width: 100%;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                box-sizing: border-box;
-                padding: 0 16px;
+                color: $mainWord_1;
+                font-size: 0.85rem;
                 font-weight: bold;
-                font-size: 4vw;
 
-                &.title {
-                    color: $mainWord_1;
-                    border-bottom: solid 1px $mainBorder_1;
-                }
+                &:last-child {
+                    width: 50%;
+                    font-weight: normal;
+                    text-align: center;
 
-                span {
-                    font-size: 4vw;
-                    font-weight: bold;
-
-                    &:nth-of-type(1) {
-                        color: $mainWord_2;
+                    &.feeback {
+                        color: $subWord_3;
                     }
 
-                    &:last-child {
-                        color: $mainWord_1;
-                    }
-
-                    &.sp {
-                        color: $remind;
+                    &.money {
+                        color: $subWord_2;
                     }
                 }
-            }
-
-            .remindBox {
-                width: auto;
-                height: 42px;
-                margin: 0 16px;
-                border-radius: 3px;
-                background: $mainBG_3;
-                box-sizing: border-box;
-                padding: 5px;
-                color: $mainWord_4;
-                font-size: 2vw;
-                font-weight: bold;
-            }
-
-            .btnBox {
-                width: 100%;
-                height: auto;
-                margin: 20px 0;
-                box-sizing: border-box;
-                padding: 0 14px;
-                display: flex;
-                justify-content: space-between;
 
                 button {
-                    width: 48%;
-                    height: 38px;
-
-                    &:nth-of-type(1) {
-                        @include secondBtn;
-                        font-size: 3.4vw;
-                    }
-
-                    &:last-child {
-                        @include mainBtn;
-                        font-size: 3.4vw;
-                    }
+                    width: 24vw;
+                    height: 9vw;
+                    @include mainBtn;
+                    margin: 0 auto;
                 }
             }
         }
